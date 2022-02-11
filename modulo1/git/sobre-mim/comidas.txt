@@ -1,0 +1,7 @@
+1 - Strogonoff
+2 - Fricassê
+3 - Salpiçao
+4 - Macarronada
+5 - Pizza
+6 - Hambúrguer
+7 - Qualquer tipo de doce
