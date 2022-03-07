@@ -75,7 +75,6 @@ function retornaNPrimeirosPares(n) {
     return numerosPares;
 }
 
-
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
   if(ladoA === ladoB && ladoB === ladoC){
@@ -93,11 +92,10 @@ function retornaSegundoMaiorESegundoMenor(array) {
   return [arrayOrdenado[array.length - 2], arrayOrdenado[1]];
 
 }
-console.log(retornaSegundoMaiorESegundoMenor([3, 2, 1, 4, 7, 6, 5]));
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+  return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores.join(', ')}.`;
 }
 
 // EXERCÍCIO 12
