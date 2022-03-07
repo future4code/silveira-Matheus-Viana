@@ -134,6 +134,13 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
 
+  contas.map(conta => conta.compras = conta.compras.reduce((a, b) => a + b, 0));
+  
+  contas.map(conta => conta.saldoTotal = conta.saldoTotal - conta.compras);
+  
+  contas.map(conta => conta.compras = []);  
+
+  return contas;
 }
 
 // EXERCÍCIO 15A
@@ -143,5 +150,5 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+  
 }
