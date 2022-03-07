@@ -120,7 +120,15 @@ function retornaPessoasAutorizadas(pessoas) {
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+  let pessoasNaoAutorizadas = [];
+
+  pessoas.map(pessoa => {
+    if(pessoa.altura < 1.5 || pessoa.idade <= 14 || pessoa.idade >= 60){
+      pessoasNaoAutorizadas.push(pessoa);
+    }
+  });  
+
+  return pessoasNaoAutorizadas;  
 }
 
 // EXERCÍCIO 14
