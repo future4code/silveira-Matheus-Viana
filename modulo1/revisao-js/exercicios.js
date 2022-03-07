@@ -35,7 +35,33 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
+  let maiorNumero;
+  let menorNumero;
+  let maiorDivisivelPorMenor;
 
+  if(num1 > num2){
+    maiorNumero = num1;
+    menorNumero = num2;  
+  }else{
+    maiorNumero = num2;  
+    menorNumero = num1;  
+  }
+
+  if(maiorNumero % menorNumero == 0){
+    maiorDivisivelPorMenor = true;
+  }else{
+    maiorDivisivelPorMenor = false;
+  }
+
+  let diferenca = maiorNumero - menorNumero;
+
+  const infoNumeros = {
+    "maiorNumero": maiorNumero,
+    "maiorDivisivelPorMenor": maiorDivisivelPorMenor,
+    "diferenca": diferenca
+  }
+
+  return infoNumeros;
 }
 
 // EXERCÍCIO 08
