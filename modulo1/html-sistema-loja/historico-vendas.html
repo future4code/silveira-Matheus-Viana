@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Funcionários</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="header-simples">
+      <p class="logo">Mantini's</p>
+  </header>
+  
+  <div class="menu">
+      <a href="./index.html">Página Inicial</a>
+      <a href="./ctrl-estoque.html">Controle de Estoque</a>
+      <a href="./add-produto.html">Adicionar Produto</a>
+      <a href="./funcionarios.html">Funcionários</a>
+      <a href="./venda.html">Venda</a>
+      <a href="./historico-vendas.html">Histórico de Vendas</a>
+  </div>
+
+  <h2 class="titulo-pagina">Histórico de Vendas</h2>
+  
+  <form id="form-filtrar-data" action="">
+
+    <label id="label-filtrar-data" for="filtrar-data">Filtrar Data: </label>
+    <input type="text" id="filtrar-data" name="filtrar-data">
+    
+    <button class="btn-filtro" type="submit">Filtrar</button>
+
+  </form>
+
+  <div class="tb-estoque">
+    <table id="tabela-historico-vendas">
+        <thead>
+          <tr>
+              <th>Data / Horário</th>
+              <th>Funcionário</th>
+              <th>Valor Total (R$)</th>
+              <th>Forma de Pagamento</th>
+          </tr>
+        </thead>
+
+        <tr>
+            <td>09/03/2022 12:43</td>
+            <td>Marta</td>
+            <td>557,38</td>
+            <td>Cartão</td>
+        </tr>
+
+        <tr>
+            <td>09/03/2022 15:17</td>
+            <td>Marta</td>
+            <td>170,00</td>
+            <td>Dinheiro</td>
+        </tr>
+
+        <tr>
+            <td>09/03/2022 15:39</td>
+            <td>Jéssica</td>
+            <td>R$49,99</td>
+            <td>Dinheiro</td>
+        </tr>
+
+        <tr>
+            <td>09/03/2022 16:02</td>
+            <td>Paulo</td>
+            <td>R$790,90</td>
+            <td>Cartão</td>
+        </tr>
+
+        <tr>
+            <td>09/03/2022 16:33</td>
+            <td>Renato</td>
+            <td>R$999,90</td>
+            <td>Dinheiro</td>
+        </tr>
+
+    </table>
+  </div>
+
+    
+</body>
+</html>
