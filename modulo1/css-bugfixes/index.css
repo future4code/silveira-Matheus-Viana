@@ -115,6 +115,14 @@ td button {
     color: black;
 }
 
+td button:hover{
+    background-color: #ad9838;
+}
+
+td button:active{
+    color: white;
+}
+
 td img{
   width: 50px;
   height: 50px;
@@ -137,5 +145,10 @@ td img{
 }
 
 #back-button:hover {
-    background-color: #635a3d
+    background-color: #635a3d;
+}
+
+#back-button a:active {
+    color: white;
+    text-decoration: none;
 }
