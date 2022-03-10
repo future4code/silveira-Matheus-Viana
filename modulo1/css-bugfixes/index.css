@@ -61,8 +61,16 @@ div>p:first-child {
 
 .icone {
     height: 15px;
+    cursor: pointer;
 }
 
+.icone:hover{
+  opacity: 0.5;
+}
+
+.icone:active{
+  opacity: 1;
+}
 
 /** 
   *
