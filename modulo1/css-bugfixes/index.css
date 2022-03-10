@@ -17,6 +17,11 @@ h2 {
     text-align: center;
 }
 
+a, button{  
+    text-decoration: none;
+    cursor: pointer;
+}
+
 input {
     height: 20px;
     width: 500px;
@@ -40,7 +45,8 @@ div>p:first-child {
     font-size: 20px;
     color: white;
     display: block;
-    margin: 0 auto;
+    margin: 200px auto;
+    border: 1px solid #ccc;
 }
 
 .botao-amarelo:hover {
@@ -74,7 +80,7 @@ div>p:first-child {
 
 #container-de-descricao>p {
     display: block;
-    padding: 0 30px;
+    padding: 0 20px;
 }
 
 #container-de-descricao>ol {
@@ -89,6 +95,8 @@ div>p:first-child {
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
+    position: relative;
+    top: 100px;
 }
 
 
@@ -104,8 +112,14 @@ div:last-child {
 }
 
 table {
-    width: 60%;
-    text-align: center;
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#container-table{
+  display: block;
+  margin: 0 auto;
 }
 
 td button {
@@ -114,6 +128,9 @@ td button {
     height: 30px;
     border-radius: 5px;
     color: black;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 td button:hover{
@@ -149,13 +166,14 @@ td img{
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    display: block;
+    margin: 100px auto;
 }
 
 #back-button:hover {
-    background-color: #635a3d;
+    background-color: #b6b1a0;
 }
 
 #back-button a:active {
     color: white;
-    text-decoration: none;
 }
