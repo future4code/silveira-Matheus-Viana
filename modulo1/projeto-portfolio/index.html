@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Matheus Mantini</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="container">
+
+      <div class="logo">
+        <img src="src/logo-mantini-white.png" alt="">
+      </div>
+
+      <div class="menu">
+        <ul>
+          <li><a href=""><i class="fa-solid fa-house"></i> Início</a></li>
+          <li><a href=""><i class="fa-solid fa-book"></i> Habilidades</a></li>
+          <li><a href=""><i class="fa-solid fa-building-columns"></i> Experiências</a></li>
+          <li><a href=""><i class="fa-solid fa-laptop-code"></i> Projetos</a></li>
+          <li><a href=""><i class="fa-regular fa-address-card"></i> Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Seção sobre mim -->
+  <div class="titulo-secao">
+    <h2>Quem sou eu?</h2>
+  </div>
+  
+  <div class="sobre-mim">
+    <div class="container">
+
+      <div class="foto">
+        <img src="src/matheus.png" alt="">
+      </div>
+
+      <div class="sobre">
+        <h2>Sou o Matheus Mantini.</h2>
+        <p id="titulo-sobre">Desenvolvedor Web FullStack</p>
+        <p id="texto-sobre">Apesar de ser apaixonado por tecnologia desde cedo, me formei em Engenharia Ambiental e atuei por 4 anos na área. Mas foi no início de 2020 que resolvi mudar de carreira e seguir minha verdadeira paixão, dedicando aos estudos de programação web.</p>
+      </div>      
+
+    </div>
+  </div>
+  
+  <!-- Seção sobre experiências profissionais e acadêmicas -->
+  <div class="titulo-secao" id="secao">
+    <h2>Experiências</h2>
+  </div>
+
+  <div class="experiencias">
+    <div class="container">
+
+      <div class="academicas">
+        <table>
+          <thead>
+            <tr>
+              <th><i class="fa-solid fa-graduation-cap"></i> Acadêmicas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="titulo-experiencia">Desenvolvimento Web FullStack <span id="data-experiencia"> (Fev 2022 a Jul 2022)</span></td>
+            </tr>
+            <tr>
+              <td id="subtitulo-experiencia">Labenu</td>
+            </tr>
+            <tr>
+              <td id="titulo-experiencia">Análise e Desenvolvimento de Sistemas <span id="data-experiencia"> (Fev 2020 a Jul 2022)</span></td>
+            </tr>
+            <tr>
+              <td id="subtitulo-experiencia">Universidade Estácio de Sá</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="profissionais">
+        <table>
+          <thead>
+            <tr>
+              <th><i class="fa-solid fa-user-tie"></i> Profissionais</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="titulo-experiencia">Desenvolvedor Web - Freelancer <span id="data-experiencia">(Jul 2021 a Dez 2021)</span></td>
+            </tr>
+            <tr>              
+              <td id="subtitulo-experiencia">Desenvolvimento de interfaces web responsivas com HTML, CSS, JavaScript e Bootstrap.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>      
+
+    </div>
+  </div>
+  
+  
+  <!-- Seção sobre minhas habilidades -->
+  <div class="titulo-secao" id="secao">
+    <h2>Habilidades</h2>
+  </div>
+  
+  <div class="sobre-mim">
+    <div class="container">
+
+      <div class="foto">
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+
+      <div class="sobre">
+        <p id="texto-sobre">Soft-Skills:</p>
+      </div>      
+
+    </div>
+  </div>
+
+  
+  
+  <!-- Seção sobre meus contatos -->
+  <div class="titulo-secao" id="secao">
+    <h2>Contato</h2>
+  </div>
+
+  <div class="experiencias">
+    <div class="container">
+
+      <div class="academicas">
+        <div class="titulo-contato">Me acompanhe nas redes sociais</div>
+          <ul>
+            <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/matheusmantini/">matheusmantini</a></li>
+            <li><i class="fa-brands fa-github"></i> <a href="https://github.com/matheusmantini">matheusmantini</a></li>
+            <li><i class="fa-solid fa-envelope"></i> <a href=""> engmatheusmantini@gmail.com</a></li>
+          </ul>          
+      </div>
+
+      <div class="profissionais">
+        <div class="titulo-contato">Me mande uma mensagem</div>
+                    <form action="#">
+                        <div class="fields">
+                            <div class="field name">
+                                <input type="text" placeholder="Nome" required="">
+                            </div>
+                            <div class="field email">
+                                <input type="email" placeholder="E-mail" required="">
+                            </div>                            
+                        </div><!-- fields -->
+                        <div class="field textarea">
+                            <textarea cols="30" rows="10" placeholder="Descreva o projeto" required=""></textarea>
+                        </div>
+                        <div class="button">
+                            <button type="submit">Enviar mensagem</button>
+                        </div>
+                    </form>
+      </div>      
+
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+  
+    
+
+  <footer>
+    <div class="container">
+      <p>Desenvolvido por <span>Matheus Mantini</span> | &copy 2022 Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+
+
+  
+</body>
+</html>

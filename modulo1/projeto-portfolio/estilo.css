@@ -1,0 +1,224 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+/* HEADER */
+
+.header{
+  background-color: #4cb185;
+  height: 60px;
+}
+
+.header .container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header img{
+  position: relative;
+  top: 5px;
+  left: 20px;
+  width: 80px;
+}
+
+.menu{
+  position: relative;
+  top: 14px;
+  right: 20px;
+}
+
+.menu ul{
+  list-style: none;
+}
+
+.menu ul li{
+  display: inline-block;
+}
+
+.menu ul li a{
+  padding: 22px 15px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.menu ul li a:hover{
+  color: white;
+  background-color: #2e8861;
+  transition: 0.5s ease-in-out;
+}
+
+.menu ul li a i{
+  margin-right: 5px;
+}
+
+/* Títulos de cada seção */
+
+.titulo-secao {
+  overflow: hidden;
+  text-align: center;
+  color: #4cb185;
+  margin: 30px 0;
+}
+
+.titulo-secao:before,
+.titulo-secao:after {
+  background-color: #4cb185;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.titulo-secao:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.titulo-secao:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+#secao{
+  margin-top: 50px;
+}
+
+/* sobre mim */
+
+.sobre-mim .container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.sobre h2{
+  font-size: 32px;
+}
+
+.sobre-mim .foto img{
+  width: 300px;
+  position: relative;
+  top: 6.5px;
+  right: 10px;
+}
+
+.foto{
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+  width: 290px;
+}
+
+.sobre{
+  width: 500px;
+  margin-left: 50px;
+  text-align: center;
+}
+
+#titulo-sobre{
+  font-style: italic;
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+#texto-sobre{
+  text-align: justify;
+  line-height: 35px;
+}
+
+/* experiencias */
+
+.experiencias{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.experiencias .container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.academicas, 
+.profissionais{
+  width: 500px;
+  height: 200px;
+  margin-left: 50px;
+  text-align: center;
+}
+
+#data-experiencia{
+  display: block;
+}
+
+table thead tr th{
+  background-color: #4cb185;
+  color: white;
+  padding: 10px 0;
+}
+
+table thead tr th i{
+  margin-right: 5px;
+}
+
+#titulo-experiencia{
+  font-weight: 500;
+    padding: 10px 30px 0 30px;
+}
+
+#subtitulo-experiencia{
+  font-style: italic;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #4cb185;
+}
+
+
+/* Contato */
+
+.titulo-contato{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+
+footer{
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  background-color: #4cb185;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p{
+  color: rgba(255, 255, 255, 0.5);
+}
+
+footer p span{
+  color: white;
+  font-weight: bold;
+}
