@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo do Index */
+
+header {
+  display: block;
+  width: 100%;
+  height: 7vh;
+  line-height: 15px;
+  background-color: rgb(41, 148, 112);
+  text-align: center;
+  padding-top: 5px;
+  line-height: 30px;
+  color: white;
+}
+
+header em {
+  color: rgb(13, 77, 55);
+}
+
+header p {
+  font-style: italic;
+}
+
+.logo {
+  font-size: 26px;
+  font-style: normal;
+}
+
+.menu {
+  display: block;
+  width: 100%;
+  height: 6vh;
+  line-height: 15px;
+  text-align: center;
+  line-height: 45px;
+  color: white;
+}
+
+.menu a {
+  text-decoration: none;
+  padding: 10px 5px;
+  background-color: rgb(41, 148, 112);
+  cursor: pointer;
+  color: white;
+}
+
+.conteudo {
+  height: 80vh;
+  text-align: center;
+  line-height: 45;
+}
+
+footer {
+  display: block;
+  width: 100%;
+  height: 7vh;
+  line-height: 30px;
+  background-color: rgb(41, 148, 112);
+  text-align: center;
+  color: white;
+}
+
+footer img {
+  width: 35px;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+/* Estilo das Outras Páginas */
+
+.header-simples {
+  display: block;
+  width: 100%;
+  height: 4vh;
+  line-height: 15px;
+  background-color: rgb(41, 148, 112);
+  text-align: center;
+  padding-top: 5px;
+  line-height: 25px;
+  color: white;
+}
+
+.titulo-pagina {
+  display: block;
+  text-align: center;
+  color: rgb(41, 148, 112);
+  border-top: 1px solid rgb(41, 148, 112);
+  border-bottom: 1px solid rgb(41, 148, 112);
+  padding: 10px 0;
+}
+
+/* Controle de Estoque */
+
+table {
+  width: 90vw;
+  padding: 0 25vw;
+  margin: 15px 5vw;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+table td {
+  border-bottom: 1px solid rgb(41, 148, 112);
+}
+
+thead tr th {
+  background-color: rgba(41, 148, 112, 0.2);
+  padding: 5px 2px;
+  width: 25%;
+  color: rgb(41, 148, 112);
+}
+
+.img-estoque {
+  width: 100px;
+  height: 100px;
+}
+
+.tb-controle-estoque tr {
+  height: 40px;
+  border-top: 1px solid rgb(41, 148, 112);
+  border-bottom: 1px solid rgb(41, 148, 112);
+}
+
+/* Adicionar Produto */
+
+form {
+  text-align: center;
+}
+
+.label-add-produto {
+  display: inline-block;
+  width: 160px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.input-add-produtos {
+  width: 500px;
+  height: 30px;
+  outline: 0;
+  padding-left: 8px;
+  font-size: 14px;
+}
+
+form button {
+  width: 100px;
+  height: 40px;
+  background-color: rgb(41, 148, 112);
+  border: 1px solid #ccc;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-line {
+  margin: 15px;
+}
+
+/* Funcionários */
+
+ol {
+  text-align: center;
+}
+
+ol li {
+  padding: 10px;
+  font-size: 16px;
+  border-bottom: 1px dotted rgb(41, 148, 112);
+}
+
+/* Venda */
+
+#forma-pagamento {
+  color: red;
+}
+
+.label-destaque-forma-pgto {
+  display: inline-block;
+  width: 160px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.label-forma-pgto {
+  font-weight: normal;
+}
+
+.btn-add-produto-form-venda {
+  width: 140px;
+}
+
+.btn-form-venda {
+  display: block;
+  width: 140px;
+  height: 40px;
+  background-color: rgb(41, 148, 112);
+  border: 1px solid #ccc;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.input-add-venda {
+  width: 500px;
+  height: 30px;
+  outline: 0;
+  padding-left: 8px;
+  font-size: 14px;
+}
+
+/* Histórico Vendas */
+
+#tabela-historico-vendas tr {
+  height: 40px;
+  border-top: 1px solid rgb(41, 148, 112);
+  border-bottom: 1px solid rgb(41, 148, 112);
+}
+
+#form-filtrar-data {
+  margin: 15px;
+}
+#filtrar-data {
+  width: 100px;
+  height: 30px;
+  outline: 0;
+  padding-left: 8px;
+  font-size: 16px;
+}
+
+#label-filtrar-data {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn-filtro {
+  width: 70px;
+  height: 30px;
+}

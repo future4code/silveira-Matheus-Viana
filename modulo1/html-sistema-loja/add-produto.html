@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adicionar Produto</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header class="header-simples">
+        <p class="logo">Mantini's</p>
+    </header>
+    
+    <div class="menu">
+        <a href="./index.html">Página Inicial</a>
+        <a href="./ctrl-estoque.html">Controle de Estoque</a>
+        <a href="./add-produto.html">Adicionar Produto</a>
+        <a href="./funcionarios.html">Funcionários</a>
+        <a href="./venda.html">Venda</a>
+        <a href="./historico-vendas.html">Histórico de Vendas</a>
+    </div>
+
+    
+    <h2 class="titulo-pagina">Adicionar Produto</h2>
+    <form action="">
+        <div class="form-line">
+            <label class="label-add-produto" for="link-foto">Link para foto: </label>
+            <input class="input-add-produtos" type="url" id="link-foto" name="link-foto">
+        </div>
+        
+        <div class="form-line">
+            <label class="label-add-produto" for="descricao">Descrição do produto: </label>
+            <input class="input-add-produtos" type="text" id="descricao" name="descrição">
+        </div>
+        
+        <div class="form-line">
+            <label class="label-add-produto" for="preco">Preço (em R$): </label>
+            <input class="input-add-produtos" type="" id="preco" name="preço">
+        </div>
+        
+        <div class="form-line">
+            <label class="label-add-produto">Quantidade disponível: </label>
+            <input class="input-add-produtos" type="" id="quantidade" name="quantidade">
+        </div>
+
+        <div class="form-line" class="form-add">
+            <button type="submit">Adicionar</button>
+        </div>
+    </form>
+
+</body>
+</html>
