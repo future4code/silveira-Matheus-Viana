@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LabeTube</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../estilo.css" />
+  </head>
+  <body>
+    <header>
+      <a href="../index.html"><p>Labe<span>Tube</span></p></a>
+      <form action="">
+        <input type="text" placeholder="Busca" />
+      </form>
+    </header>
+
+    <main id="container-video-individual">      
+
+      <nav id="btn-voltar">
+        <button><a href="../index.html"><i class="fas fa-long-arrow-alt-left"></i></a></button>
+      </nav>
+
+      <div class="container-video">
+        <video
+          src="https://storage.googleapis.com/future-apis.appspot.com/3.mp4" autoplay controls
+        ></video>  
+      </div>     
+      <div class="container-info-video">
+        <div class="container-info">
+          <h2>Planets</h2>
+          <p id="visualizacoes">11.725.483 visualizações &sdot; <span>15 de mar. de 2022</span></p>
+          <p id="descricao">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis ab quam delectus est, minima recusandae? Modi explicabo blanditiis rerum quae porro possimus quisquam id, numquam nihil ipsam veritatis cumque animi.</p>
+        </div>
+        <div id="container-interacoes">
+          <span style="color: rgb(64, 175, 101);"><i class="far fa-thumbs-up"></i> Gostei</span>
+          <span style="color: rgb(245, 51, 51);"><i class="far fa-thumbs-down"></i> Não Gostei</span>
+          <span style="color: rgb(172, 184, 17);"><i class="far fa-share-square"></i> Compartilhar</span>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        Copyright © 2022 <span><b>Matheus Mantini</b></span> All rights
+        reserved.
+      </p>
+    </footer>
+  </body>
+</html>
