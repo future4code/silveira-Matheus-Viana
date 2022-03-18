@@ -1,0 +1,104 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  color: white;
+}
+
+.green-background {
+  background-color: green;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.yellow-background {
+  background-color: yellow;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.pink-background {
+  background-color: fuchsia;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.blue-background {
+  background-color: blue;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.red-background {
+  background-color: red;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.lightgreen-background {
+  background-color: lightgreen;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.purple-background {
+  background-color: purple;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+#main-container{
+  display: grid;
+  grid-template-rows: 60px 2fr 1fr 60px;
+  height: 100vh;
+}
+
+#top-container{
+  display: grid;
+  grid-template-columns: 20% 1fr;
+}
+
+#middle-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);;
+}
+
+#content2{
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+#blank{
+  grid-column: 3;
+  grid-row: span 2;
+}
+
+#vertical-middle-container{
+  grid-column: 4;
+  grid-row: span 2;
+  display: grid;
+  align-items: center;
+  height: 100%;
+}
+
+#image{
+  height: 100%;
+}
+
+#extra{
+  height: 100%;
+}

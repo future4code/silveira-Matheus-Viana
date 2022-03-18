@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* header */
+
+header{
+  background-color: mediumvioletred;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 20px;
+  font-weight: bold;
+}
+
+header img{
+  width: 20px;
+  margin-right: 10px;
+}
+
+header button{
+  padding: 2px 16px;
+}
+
+header #logo span{
+  font-size: 26px;
+}
+
+/* main menu */
+
+main{
+  flex-grow: 1;
+  display: flex;
+}
+
+main nav{
+  padding: 20px;
+}
+
+main #menu{
+  width: 450px;
+  background-color: #f2d0e0;
+}
+
+#icone-menu{
+  width: 20px;
+}
+
+.item-menu{
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  column-gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* main conteudo */
+
+#cards{
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  
+  column-gap: 20px; 
+  row-gap: 20px;
+}
+
+.card{
+  box-shadow: 5px 5px 5px 0px darkgray;
+}
+
+.card h2{
+  text-align: center;
+  margin-bottom: 8px;
+}
+.card p{
+  padding: 7px;
+  text-align: center;
+}
+
+.card img{
+  width: 100%;
+  height: 70%;
+}
+
+/* footer */
+
+footer{
+  background-color: mediumvioletred;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
