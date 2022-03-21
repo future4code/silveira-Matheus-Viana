@@ -270,9 +270,6 @@ video{
     grid-template-columns: 1fr 1fr;
   }  
 
-  header{
-  }
-
   header form input{
     max-width: 280px;
   }
