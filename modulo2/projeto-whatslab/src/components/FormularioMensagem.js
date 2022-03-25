@@ -12,11 +12,10 @@ const ContainerCenter = styled.div`
 const ContainerApp = styled.div`
     display: flex;
     flex-direction: column;
-    max-width: 650px;
-    min-height: calc(100vh - 2px);
+    box-sizing: border-box;
+    width: 650px;
+    min-height: 100vh;
     border: 1px solid black;
-    /* border-left: 1px solid black;
-    border-right: 1px solid black; */
 `;
 
 const ContainerMensagens = styled.div`
@@ -24,7 +23,8 @@ const ContainerMensagens = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   width: 94%;
-  height: 95%;
+  height: 100%;
+  box-sizing: border-box;
   padding: 3%;
 `;
 
@@ -65,16 +65,7 @@ const FormularioMensagens = styled.div`
 class FormularioMensagem extends React.Component{
 
   state = {
-    mensagens: [
-      {
-        usuario: 'Matheus',
-        mensagem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo odio quis velit ultrices gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas dapibus libero in justo ultrices dapibus. Cras sit amet porttitor mauris. Ut quis convallis ligula. Aliquam non elit quam. '
-      },
-      {
-        usuario: 'Estefânia',
-        mensagem: 'Olá, tudo bem e você?'
-      }
-    ],
+    mensagens: [],
     valorInputUsuario: "",
     valorInputMensagem: ""
   };
