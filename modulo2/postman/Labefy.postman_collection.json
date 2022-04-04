@@ -1,0 +1,1409 @@
+{
+	"info": {
+		"_postman_id": "5897b6d3-ee0c-4571-81c4-c3bf0b112a59",
+		"name": "Labefy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Criando playlist 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Rock\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criando playlist 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Dance\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criando playlist 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Clássicas\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificando playlists criadas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando música playlist 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"A Hard Day's Night\", \r\n    \"artist\": \"The Beatles\",\r\n    \"url\": \"https://www.youtube.com/watch?v=AMSiHdrHl0g\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/5c2a1657-a082-4fb3-ae5c-69c2cb99051c/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"5c2a1657-a082-4fb3-ae5c-69c2cb99051c",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando outra música playlist 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Day Tripper\", \r\n    \"artist\": \"The Beatles\",\r\n    \"url\": \"https://www.youtube.com/watch?v=2IbPn5j2YKk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/5c2a1657-a082-4fb3-ae5c-69c2cb99051c/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"5c2a1657-a082-4fb3-ae5c-69c2cb99051c",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando música playlist 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Monody (feat. Laura Brehm)\", \r\n    \"artist\": \"TheFatRat\",\r\n    \"url\": \"https://www.youtube.com/watch?v=B7xai5u_tnk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/4b38f790-6c88-46a3-97c5-6af2da6e38d5/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"4b38f790-6c88-46a3-97c5-6af2da6e38d5",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando outra música playlist 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Melody\", \r\n    \"artist\": \"Dimitri Vegas & Like Mike, Steve Aoki vs Ummet Ozcan\",\r\n    \"url\": \"https://www.youtube.com/watch?v=hvynkEbRgDc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/4b38f790-6c88-46a3-97c5-6af2da6e38d5/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"4b38f790-6c88-46a3-97c5-6af2da6e38d5",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando música playlist 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"The Sound of Silence\", \r\n    \"artist\": \"Simon & Garfunkel\",\r\n    \"url\": \"https://www.youtube.com/watch?v=NAEppFUWLfc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/e67a0e0c-2032-4bd7-8766-798c057ffc51/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"e67a0e0c-2032-4bd7-8766-798c057ffc51",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando outra música playlist 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pachelbel's Canon in D\", \r\n    \"artist\": \"Harp Twins - Camille and Kennerly\",\r\n    \"url\": \"https://www.youtube.com/watch?v=0sz7uv_0DSE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/e67a0e0c-2032-4bd7-8766-798c057ffc51/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"e67a0e0c-2032-4bd7-8766-798c057ffc51",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificando todas as playlists",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificando músicas playlist 1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/5c2a1657-a082-4fb3-ae5c-69c2cb99051c/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"5c2a1657-a082-4fb3-ae5c-69c2cb99051c",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificando músicas playlist 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/4b38f790-6c88-46a3-97c5-6af2da6e38d5/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"4b38f790-6c88-46a3-97c5-6af2da6e38d5",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificando músicas playlist 3",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/e67a0e0c-2032-4bd7-8766-798c057ffc51/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"e67a0e0c-2032-4bd7-8766-798c057ffc51",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisando Playlist Favorita",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/search?name=Rock",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Rock"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando mais uma música playlist 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"I Should Have Known Better\", \r\n    \"artist\": \"The Beatles\",\r\n    \"url\": \"https://www.youtube.com/watch?v=5en2JMLA8Z0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/5c2a1657-a082-4fb3-ae5c-69c2cb99051c/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"5c2a1657-a082-4fb3-ae5c-69c2cb99051c",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando mais outra música playlist 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"We Can Work it Out\", \r\n    \"artist\": \"The Beatles\",\r\n    \"url\": \"https://www.youtube.com/watch?v=Qyclqo_AV2M\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/5c2a1657-a082-4fb3-ae5c-69c2cb99051c/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"5c2a1657-a082-4fb3-ae5c-69c2cb99051c",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificando músicas playlist 1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/5c2a1657-a082-4fb3-ae5c-69c2cb99051c/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"5c2a1657-a082-4fb3-ae5c-69c2cb99051c",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando música que não gosto playlist 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Havana (Audio) ft. Young Thug\", \r\n    \"artist\": \"Camila Cabello\",\r\n    \"url\": \"https://www.youtube.com/watch?v=HCjNJDNzw8Y\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/4b38f790-6c88-46a3-97c5-6af2da6e38d5/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"4b38f790-6c88-46a3-97c5-6af2da6e38d5",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificando músicas playlist 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/4b38f790-6c88-46a3-97c5-6af2da6e38d5/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"4b38f790-6c88-46a3-97c5-6af2da6e38d5",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletando música que não gosto playlist 2",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/4b38f790-6c88-46a3-97c5-6af2da6e38d5/tracks/f7c339f5-dd4e-45e3-9a01-658d9345de45",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"4b38f790-6c88-46a3-97c5-6af2da6e38d5",
+						"tracks",
+						"f7c339f5-dd4e-45e3-9a01-658d9345de45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando mais uma música playlist 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Complicated\", \r\n    \"artist\": \"Dimitri Vegas & Like Mike vs David Guetta feat. Kiiara\",\r\n    \"url\": \"https://www.youtube.com/watch?v=w0EF3AxJwLU\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/4b38f790-6c88-46a3-97c5-6af2da6e38d5/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"4b38f790-6c88-46a3-97c5-6af2da6e38d5",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando mais outra música playlist 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Something Just Like This\", \r\n    \"artist\": \"The Chainsmokers & Coldplay\",\r\n    \"url\": \"https://www.youtube.com/watch?v=FM7MFYoylVs\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/4b38f790-6c88-46a3-97c5-6af2da6e38d5/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"4b38f790-6c88-46a3-97c5-6af2da6e38d5",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificando músicas playlist 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/4b38f790-6c88-46a3-97c5-6af2da6e38d5/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"4b38f790-6c88-46a3-97c5-6af2da6e38d5",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apagando playlist 1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/5c2a1657-a082-4fb3-ae5c-69c2cb99051c",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"5c2a1657-a082-4fb3-ae5c-69c2cb99051c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apagando playlist 2",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/4b38f790-6c88-46a3-97c5-6af2da6e38d5",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"4b38f790-6c88-46a3-97c5-6af2da6e38d5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apagando playlist 3",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/e67a0e0c-2032-4bd7-8766-798c057ffc51",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"e67a0e0c-2032-4bd7-8766-798c057ffc51"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificando playlists criadas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criando nova playlist",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Diversas\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificando playlists criadas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando música 1 playlist diversas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"A Hard Day's Night\", \r\n    \"artist\": \"The Beatles\",\r\n    \"url\": \"https://www.youtube.com/watch?v=AMSiHdrHl0g\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/c38d0e48-8c48-4d25-a3c1-59ed945d27db/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"c38d0e48-8c48-4d25-a3c1-59ed945d27db",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando música 2 playlist diversas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Day Tripper\", \r\n    \"artist\": \"The Beatles\",\r\n    \"url\": \"https://www.youtube.com/watch?v=2IbPn5j2YKk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/c38d0e48-8c48-4d25-a3c1-59ed945d27db/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"c38d0e48-8c48-4d25-a3c1-59ed945d27db",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando música 3 playlist diversas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"I Should Have Known Better\", \r\n    \"artist\": \"The Beatles\",\r\n    \"url\": \"https://www.youtube.com/watch?v=5en2JMLA8Z0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/c38d0e48-8c48-4d25-a3c1-59ed945d27db/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"c38d0e48-8c48-4d25-a3c1-59ed945d27db",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificando músicas playlist diversas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/c38d0e48-8c48-4d25-a3c1-59ed945d27db/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"c38d0e48-8c48-4d25-a3c1-59ed945d27db",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apagando música playlist diversas",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/c38d0e48-8c48-4d25-a3c1-59ed945d27db/tracks/524cd1b8-79e4-469e-ad68-3de0a8c2556f",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"c38d0e48-8c48-4d25-a3c1-59ed945d27db",
+						"tracks",
+						"524cd1b8-79e4-469e-ad68-3de0a8c2556f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificando músicas playlist diversas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/c38d0e48-8c48-4d25-a3c1-59ed945d27db/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"c38d0e48-8c48-4d25-a3c1-59ed945d27db",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criando nova playlist 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"The Beatles\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criando nova playlist 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Clássicas\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando música playlist 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"We Can Work it Out\", \r\n    \"artist\": \"The Beatles\",\r\n    \"url\": \"https://www.youtube.com/watch?v=Qyclqo_AV2M\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/c826b197-a51d-4394-8bd0-2d60e04132e3/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"c826b197-a51d-4394-8bd0-2d60e04132e3",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando música playlist 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"The Sound of Silence\", \r\n    \"artist\": \"Simon & Garfunkel\",\r\n    \"url\": \"https://www.youtube.com/watch?v=NAEppFUWLfc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/75c1293c-54c5-47f8-baaa-f5fafa781663/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"75c1293c-54c5-47f8-baaa-f5fafa781663",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificando músicas playlist 1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/c826b197-a51d-4394-8bd0-2d60e04132e3/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"c826b197-a51d-4394-8bd0-2d60e04132e3",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificando músicas playlist 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "matheus-viana-silveira",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/75c1293c-54c5-47f8-baaa-f5fafa781663/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"75c1293c-54c5-47f8-baaa-f5fafa781663",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
