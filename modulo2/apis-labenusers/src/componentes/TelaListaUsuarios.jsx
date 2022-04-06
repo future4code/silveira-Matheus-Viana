@@ -61,6 +61,12 @@ const ItemLista = styled.li`
   padding: 10px 0;
   border-bottom: 1px solid rgb(66, 129, 245);
 
+  p{
+    cursor: pointer;
+    :hover{
+      text-decoration: underline;
+    }
+  }
   span{
     color: rgb(255,0,0);
     cursor: pointer;
@@ -76,13 +82,18 @@ const headers = {
   },
 };
 
-class TelaListaUsuarios extends React.Component {
+export default class TelaListaUsuarios extends React.Component {
     state = {
       usuarios: []
-    }
+    }  
 
     componentDidMount(){
-    axios
+      this.pegaTodosUsuarios()
+    }  
+
+    pegaTodosUsuarios = () => {
+
+      axios
       .get(`${urlBase}`, headers)
       .then((res) => {
         this.setState({
@@ -90,22 +101,10 @@ class TelaListaUsuarios extends React.Component {
         })
       })
       .catch((err) => {
-        console.log(err.response.data);
+        alert("Ocorreu um problema. Tente novamente!");
       });
-    }    
 
-    componentDidUpdate(){
-      axios
-        .get(`${urlBase}`, headers)
-        .then((res) => {
-          this.setState({
-            usuarios: res.data
-          })
-        })
-        .catch((err) => {
-          console.log(err.response.data);
-        });      
-    }
+    }  
 
     onClickDeleteUser = (id) => {
 
@@ -113,23 +112,29 @@ class TelaListaUsuarios extends React.Component {
         axios
         .delete(`${urlBase}/${id}`, headers)
         .then((res) => {
-          alert("O usuário foi deletado com sucesso!")
+          alert("Usuário(a) foi deletado(a) com sucesso!");          
+          this.pegaTodosUsuarios();
         })
         .catch((err) => {
           alert(err.response.data.message)
         })
       }
-    }
+    }   
 
     render () {
 
         const componentesUsuarios = this.state.usuarios.map((usuario) => {
-          return <ItemLista key={usuario.id}>{usuario.name} <span onClick={() => this.onClickDeleteUser(usuario.id)}><i className="far fa-trash-alt"></i></span></ItemLista>
+          return (
+            <ItemLista key={usuario.id}>
+              <p onClick={() => { this.props.irParaDetalhesUsuario(usuario.id) }}>{usuario.name}</p>
+              <span onClick={() => this.onClickDeleteUser(usuario.id)}><i className="far fa-trash-alt"></i></span>
+            </ItemLista>
+          )
         });
 
         return (
             <div>
-              <BotaoVoltar onClick={() => { this.props.mudarTelaAtual("cadastro")}}><i class="fas fa-arrow-left"></i> Voltar</BotaoVoltar>
+              <BotaoVoltar onClick={() => { this.props.irParaCadastro()}}><i className="fas fa-arrow-left"></i> Voltar</BotaoVoltar>
               
               <ContainerFlex>
                 <TituloPagina>
@@ -149,5 +154,3 @@ class TelaListaUsuarios extends React.Component {
         )
     }
 }
-
-export default TelaListaUsuarios

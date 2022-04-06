@@ -87,7 +87,7 @@ const headers = {
   },
 };
 
-class TelaCadastro extends React.Component {
+export default class TelaCadastro extends React.Component {
     state = {
       telaAtual: "cadastro",
       inputNome: "",
@@ -120,11 +120,18 @@ class TelaCadastro extends React.Component {
           inputEmail: ""
         });
         alert(
-          `O usuário ${body.name} foi cadastrado(a) com sucesso!`
+          `Usuário(a) ${body.name} foi cadastrado(a) com sucesso!`
         );
       })
       .catch((err) => {
-        alert(err.response.data.message);
+        switch (err.response.data.message) {
+          case "There is an user with this name or this email":
+            alert("Já existe um usuário com este nome ou este email.");
+            break;
+          case "User information are missing. Name and email are required.":
+            alert("Nome e Email são campos obrigatórios.");
+            break;
+        }
       });
   };
 
@@ -132,7 +139,7 @@ class TelaCadastro extends React.Component {
 
         return (
             <div>
-              <BotaoVoltar onClick={() => { this.props.mudarTelaAtual("listaUsuarios")}}><i className="fas fa-users"></i> Listar Usuários Cadastrados</BotaoVoltar>
+              <BotaoVoltar onClick={() => { this.props.irParaListaUsuarios()}}><i className="fas fa-users"></i> Listar Usuários Cadastrados</BotaoVoltar>
               
               <ContainerFlex>
                 <TituloPagina>
@@ -151,15 +158,10 @@ class TelaCadastro extends React.Component {
                     placeholder="Email"
                   />
                   <BotaoEnviar onClick={this.postCreateUser}><i className="fas fa-user"></i> Criar Usuário</BotaoEnviar>
-                </ContainerInputForm>                
-
-
-
+                </ContainerInputForm>    
                 
               </ContainerFlex>
             </div>
         )
     }
 }
-
-export default TelaCadastro
