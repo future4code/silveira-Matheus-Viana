@@ -1,7 +1,7 @@
 import React from "react";
+import styled from "styled-components";
 import "./App.css";
 
-import Home from "./pages/Home/Home";
 import CreatePlaylist from "./pages/CreatePlaylist/CreatePlaylist";
 import ShowPlaylists from "./pages/ShowPlaylists/ShowPlaylists";
 import DetailsPlaylist from "./pages/DetailsPlaylist/DetailsPlaylist";
@@ -9,6 +9,17 @@ import AddMusicToPlaylist from "./components/AddMusicToPlaylist/AddMusicToPlayli
 
 import Header from "./components/Header/Header";
 import GlobalStyle from "./components/GlobalStyle/GlobalStyle";
+import Footer from "./components/Footer/Footer";
+
+const LayoutPage = styled.div`
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: 60px 1fr 40px;
+`;
+
+const ContainerContent = styled.div`
+  grid-row: 2/3;
+`;
 
 export default class App extends React.Component {
   state = {
@@ -23,16 +34,21 @@ export default class App extends React.Component {
 
   choosePage = () => {
     switch (this.state.page) {
-      case "home":
-        return <Home changePage={this.changePage} />;
       case "createPlaylist":
-        return <CreatePlaylist changePage={this.changePage} />;
+        return (
+          <CreatePlaylist
+            changePage={this.changePage}
+            onClickShowPlaylist={this.changePage}
+          />
+        );
       case "showPlaylists":
         return (
           <ShowPlaylists
             changePage={this.changePage}
             goToDetailsPlaylist={this.goToDetailsPlaylist}
             namePlaylist={this.state.namePlaylist}
+            onClickCreatePlaylist={this.changePage}
+            onClickShowPlaylist={this.changePage}
           />
         );
       case "detailsPlaylist":
@@ -41,6 +57,7 @@ export default class App extends React.Component {
             changePage={this.changePage}
             idPlaylist={this.state.idPlaylist}
             namePlaylist={this.state.namePlaylist}
+            onClickShowPlaylist={this.changePage}
           />
         );
       case "AddMusicToPlaylist":
@@ -50,7 +67,14 @@ export default class App extends React.Component {
           />
         );
       default:
-        return <Home changePage={this.changePage} />;
+        return (
+          <ShowPlaylists
+            changePage={this.changePage}
+            goToDetailsPlaylist={this.goToDetailsPlaylist}
+            namePlaylist={this.state.namePlaylist}
+            onClickCreatePlaylist={this.changePage}
+          />
+        );
     }
   };
 
@@ -61,35 +85,23 @@ export default class App extends React.Component {
       namePlaylist: name
     });
   };
-
+  
   render() {
     return (
-      <div>
-        <GlobalStyle  />
-        <div><Header /></div>
-        <button
-          onClick={() => {
-            this.changePage("home");
-          }}
-        >
-          Home
-        </button>
-        <button
-          onClick={() => {
-            this.changePage("createPlaylist");
-          }}
-        >
-          Criar Playlist
-        </button>
-        <button
-          onClick={() => {
-            this.changePage("showPlaylists");
-          }}
-        >
-          Visualizar Playlists
-        </button>
-        {this.choosePage()}
-      </div>
+      <>
+        <GlobalStyle />
+        <LayoutPage>
+          <Header
+            onClickHome={this.changePage}
+            onClickCreatePlaylist={this.changePage}
+            onClickShowPlaylist={this.changePage}
+          />
+          <ContainerContent>
+            {this.choosePage()}
+          </ContainerContent>
+          <Footer />
+        </LayoutPage>
+      </>
     );
   }
 }
