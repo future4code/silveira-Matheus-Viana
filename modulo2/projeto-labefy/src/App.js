@@ -18,7 +18,7 @@ const LayoutPage = styled.div`
 `;
 
 const ContainerContent = styled.div`
-  grid-row: 2/3;
+  /* grid-row: 2/3; */
 `;
 
 export default class App extends React.Component {

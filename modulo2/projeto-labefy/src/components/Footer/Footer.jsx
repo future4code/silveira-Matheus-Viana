@@ -12,6 +12,11 @@ const ContainerFooter = styled.div`
   color: white;
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); 
   grid-row: 3/4;
+
+  @media screen and (max-width: 768px){
+    font-size: 12px;
+  }
+
 `;
 
 

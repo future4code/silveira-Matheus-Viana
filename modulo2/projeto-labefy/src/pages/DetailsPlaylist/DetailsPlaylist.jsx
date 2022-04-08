@@ -51,11 +51,11 @@ const CardTitle = styled.div`
 
 const PageTitle = styled.h2`
   text-align: center;  
-  width: 95%;
+  width: 92%;
 `;
 
 const AddButton = styled.button`
-  width: 5%;
+  width: 8%;
   background-color: #ffffff;
   height: 100%;
   border: 0;
@@ -83,6 +83,11 @@ const ContainerGrid = styled.div`
   column-gap: 20px;
   row-gap: 20px;
   width: 100%;
+
+  @media screen and (max-width: 768px){
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 `;
 
 const CardMusic = styled.li`
@@ -119,7 +124,7 @@ const CardMusic = styled.li`
 `;
 
 const ContainerMusic = styled.div`
-  width: 90%;
+  width: 92%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -136,7 +141,7 @@ const MusicName = styled.span`
 const DeleteButton = styled.button`
   background-color: #0066ff84;
   height: 100%;
-  width: 10%;
+  width: 8%;
   border: 0;
   cursor: pointer;
   opacity: 0.5;
@@ -232,10 +237,7 @@ export default class DetailsPlaylist extends React.Component {
         <CardMusic key={music.id}>
           <ContainerMusic>
             <MusicName>{music.artist} - {music.name}</MusicName>
-            <audio id='musicPlayer' controls="controls">
-            <source src={music.url} type="audio/mp3" />
-            seu navegador não suporta HTML5
-            </audio>
+            <audio src={music.url} controls="controls"></audio>
           </ContainerMusic>
         
         <DeleteButton onClick={() => {this.onClickRemoveTrackFromPlaylist(music.id)}}><i className="far fa-trash-alt"></i></DeleteButton>

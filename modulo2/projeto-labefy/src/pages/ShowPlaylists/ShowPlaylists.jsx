@@ -85,6 +85,12 @@ const ContainerGrid = styled.div`
   column-gap: 20px;
   row-gap: 20px;
   width: 100%;
+
+  @media screen and (max-width: 768px){
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
 `;
 
 const CardPlaylist = styled.li`

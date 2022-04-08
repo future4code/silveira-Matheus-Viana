@@ -12,11 +12,23 @@ const Card = styled.div`
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   background-color: white;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 768px){
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+
 `;
 
 const Icone = styled.div`
   font-size: 26px;
   color: #0066ff;
+
+  @media screen and (max-width: 768px){
+    margin-bottom: 10px;
+  }
 `;
 
 const InputForm = styled.input`
@@ -29,9 +41,13 @@ const InputForm = styled.input`
   background-color: #0066ff;
   color: white;
   ::placeholder {
-  color: white;
-  opacity: 0.7;
-}
+    color: white;
+    opacity: 0.7;
+  }
+  @media screen and (max-width: 768px){
+    width: 80%;
+    margin-bottom: 10px;
+  }
 `;
 
 
@@ -59,6 +75,9 @@ const ButtonForm = styled.button`
   }  
   :active{
     transform: translateY(-3px);
+  }
+  @media screen and (max-width: 768px){
+    margin-top: 10px;
   }
 `;
 
