@@ -84,6 +84,11 @@ const ContainerGrid = styled.div`
   row-gap: 20px;
   width: 100%;
 
+  @media screen and (max-width: 1280px){
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
   @media screen and (max-width: 768px){
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
