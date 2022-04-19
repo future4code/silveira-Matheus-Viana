@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import styled from "styled-components";
-import { BASE_URL } from '../../constants/urls';
 
 const Container = styled.div`
   display: flex;
@@ -21,6 +19,28 @@ const Card = styled.div`
   border-radius: 10px;
   box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
   background-color: #4e4e4e;
+`;
+
+const CardNoMatches = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 535px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  p{
+    font-size: 18px;
+    background-color: #44b3b3;
+    padding: 10px 25px;
+  }
+  i{
+    font-size: 120px;
+    margin-bottom: 20px;
+    color: #44b3b3;
+  }
 `;
 
 const Imagem = styled.img`
@@ -55,32 +75,24 @@ const Bio = styled.p`
 
 const CardPerson = (props) => {
 
-  const [person, setPerson] = useState('');
   
-  const getProfileToChoose = async () => {
-    try {
-      const res = await axios.get(`${BASE_URL}/person`);
-      setPerson(res.data.profile);
-    } catch (error) {
-      alert(
-        "Não foi possível carregar as informações solicitadas. Tente novamente mais tarde!"
-      );
-    }
-  }
 
   useEffect(() => {
-    getProfileToChoose();
+    props.getProfileToChoose();
   }, [])
 
   return(
     <Container>
-      <Card>
-        <Imagem src={person.photo}/>
+      {
+        props.person != '' ? <Card>
+        <Imagem src={props.person.photo}/>
         <Info>
-          <NomeIdade>{person.name}, <span>{person.age}</span></NomeIdade>
-          <Bio>{person.bio}</Bio>
+          <NomeIdade>{props.person.name}, <span>{props.person.age}</span></NomeIdade>
+          <Bio>{props.person.bio}</Bio>
         </Info>
-      </Card>
+      </Card> : <CardNoMatches><i className="far fa-sad-tear"></i><p>Não há mais pessoas para dar Match. Resete os swipes e matches no botão de lixeira acima e tente a sorte novamente!</p></CardNoMatches>
+      }
+      
     </Container>
   )
 }

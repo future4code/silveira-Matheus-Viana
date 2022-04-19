@@ -7,6 +7,7 @@ const ContainerFooter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5px;
   button{
     display: flex;
     justify-content: center;
@@ -14,7 +15,7 @@ const ContainerFooter = styled.div`
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 0;
+    border: 2px outset #ccc;
     margin: 0 30px 10px 30px;
     cursor: pointer;
     background-color: transparent;
@@ -30,8 +31,9 @@ const BtnDismiss = styled.button`
     background-color: rgba(220,20,60,0.3);
   }
   :active{
-    background-color: rgb(220,20,60);
+    background-color: rgba(220,20,60,0.3);
     color:white;
+    border: 2px inset #ccc;
   }
 `;
 
@@ -41,38 +43,27 @@ const BtnMatch = styled.button`
     background-color: rgba(63,172,62,0.3);
   }
   :active{
-    background-color: rgb(63,172,62);
+    background-color: rgba(63,172,62,0.3);
     color:white;
+    border: 2px inset #ccc;
   }
 `;
 
 const Footer = (props) => {
 
-  const [match, setMatch] = useState(false);
-
   const giveMatch = () => {
-    if(match){
-      setMatch(match); 
-    }else{
-      setMatch(!match);  
-    }  
-    console.log(match)
+    props.choosePerson(true);
   }
 
   const discardMatch = () => {
-    if(match){
-      setMatch(!match); 
-    }else{
-      setMatch(match); 
-    }  
-    console.log(match)
+    props.choosePerson(false);
   }
 
   return(
 
     <ContainerFooter>
-      <BtnDismiss onClick={discardMatch}><i className="fas fa-times"></i></BtnDismiss>
-      <BtnMatch onClick={giveMatch}><i className="fas fa-heart"></i></BtnMatch>
+      <BtnDismiss onClick={discardMatch} title="Descartar"><i className="fas fa-times"></i></BtnDismiss>
+      <BtnMatch onClick={giveMatch} title="Dar Match"><i className="fas fa-heart"></i></BtnMatch>
     </ContainerFooter>
 
   )
