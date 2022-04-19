@@ -37,6 +37,11 @@ const Card = styled.div`
   ::-webkit-scrollbar-thumb:hover {
     background: #d66767; 
     border-radius: 10px;
+  } 
+  @media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* celulares */
+    width: 320px;
+    overflow: hidden;
   }
 `;
 

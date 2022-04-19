@@ -16,6 +16,11 @@ const Card = styled.div`
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
   background-color: aliceblue;
   padding-bottom: 20px;
+  @media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* celulares */
+      width: 320px;
+      overflow: hidden;
+  }
 `;
 
 
