@@ -1,0 +1,33 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div > .App{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+select{
+  width: 30vw;
+  padding: 12px 6px;
+  font-size: 18px;
+}
+
+div > .ContainerPokemonInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px inset #bbb;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 30vw;
+  height: 30vh;
+  margin-top: 20px;
+  font-size: 18px;
+}
