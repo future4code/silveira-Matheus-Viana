@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import ButtonThreeD from "../components/ButtonThreeD/ButtonThreeD";
 import { goBack } from "../routes/coordinator";
+import useProtectedPage from '../hooks/useProtectedPage';
 
 const Container = styled.div`
   padding: 20px;
@@ -58,12 +59,14 @@ const ContainerButton = styled.div`
 
 
 const CreateTripsPage = (props) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  useProtectedPage();
 
   return (
     <Container>
       <ContainerTitulo>
-          <ButtonThreeD text={<i class="fas fa-long-arrow-alt-left"></i>} onClick={() => goBack(navigate)} />
+          <ButtonThreeD text={<i className="fas fa-long-arrow-alt-left"></i>} title="Voltar" cor="red" onClick={() => goBack(navigate)} />
           <h2>Criar Nova Viagem</h2>
           <BlankSpace/>
       </ContainerTitulo>
@@ -76,7 +79,7 @@ const CreateTripsPage = (props) => {
         <InputForm placeholder="Descrição"/>
         <InputForm placeholder="Duração em dias"/>
         <ContainerButton>
-          <ButtonThreeD text={<i class="fas fa-save"></i>} onClick={() => alert("TESTE - Formulário Enviado com Sucesso!")} />
+          <ButtonThreeD text={<i className="fas fa-save"></i>} cor="green" title="Enviar" onClick={() => alert("TESTE - Formulário Enviado com Sucesso!")} />
         </ContainerButton>
       </ContainerForm>
     </Container>

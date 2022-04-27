@@ -16,7 +16,17 @@ const ButtonPushable = styled.button`
       border-radius: 12px;
       font-size: 1.25rem;
       color: white;
-      background: hsl(345deg 100% 47%);
+      ${(props) => {
+        if(props.cor === 'red') {
+            return 'background-color: hsl(0deg 100% 35%);'
+        } else if(props.cor === 'green') {
+            return 'background-color: hsl(150deg 100% 35%);'
+        } else if(props.cor === 'darkblue') {
+            return 'background-color: rgb(1,73,99);'
+        } else {
+            return 'background-color: rgb(119, 180, 201);'
+        }
+      }}
       will-change: transform;
       transform: translateY(-4px);
       transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
@@ -73,17 +83,17 @@ const Edge = styled.div`
     border-radius: 12px;
     background: linear-gradient(
       to left,
-      hsl(340deg 100% 16%) 0%,
-      hsl(340deg 100% 32%) 8%,
-      hsl(340deg 100% 32%) 92%,
-      hsl(340deg 100% 16%) 100%
+      hsl(0deg 0% 8%) 0%,
+      hsl(0deg 0% 16%) 8%,
+      hsl(0deg 0% 16%) 92%,
+      hsl(0deg 0% 8%) 100%
     );
 `;
 
 const ButtonThreeD = (props) => {
   return (
     <div>
-          <ButtonPushable onClick={props.onClick}>
+          <ButtonPushable cor={props.cor} title={props.title} onClick={props.onClick}>
             <Shadow/>
             <Edge/>
             <span>{props.text}</span>

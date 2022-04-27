@@ -63,7 +63,7 @@ const ApplicationFormPage = (props) => {
   return (
     <Container>
       <ContainerTitulo>
-          <ButtonThreeD text={<i class="fas fa-long-arrow-alt-left"></i>} onClick={() => goBack(navigate)} />
+          <ButtonThreeD text={<i className="fas fa-long-arrow-alt-left"></i>} cor="red" onClick={() => goBack(navigate)} />
           <h2>Inscreva-se para uma viagem</h2>
           <BlankSpace/>
       </ContainerTitulo>
@@ -73,13 +73,13 @@ const ApplicationFormPage = (props) => {
         </SelectForm>
         <InputForm placeholder="Nome"/>
         <InputForm placeholder="Idade"/>
-        <InputForm placeholder="Texto de Candidatura"/>
+        <InputForm placeholder="Porque sou um bom candidato(a)?"/>
         <InputForm placeholder="Profissão"/>
         <SelectForm>
           <option>Escolha um País</option>
         </SelectForm>
         <ContainerButton>
-          <ButtonThreeD text={<i class="fas fa-save"></i>} onClick={() => alert("TESTE - Formulário Enviado com Sucesso!")} />
+          <ButtonThreeD text={<i className="fas fa-save"></i>} cor="green" onClick={() => alert("TESTE - Formulário Enviado com Sucesso!")} />
         </ContainerButton>
       </ContainerForm>
     </Container>

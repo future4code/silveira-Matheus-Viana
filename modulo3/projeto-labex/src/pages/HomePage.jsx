@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import ButtonThreeD from "../components/ButtonThreeD/ButtonThreeD";
-import { goToListTripsPage, goToLoginPage } from "../routes/coordinator";
+import { goToListTripsPage, goToAdminHomePage } from "../routes/coordinator";
 import Background from "../assets/bg-spaceship.jpg";
 
 const Container = styled.div`
@@ -47,14 +47,14 @@ const HomePage = (props) => {
   return (
     <Container>
       <ContainerTitle>
-        <h1><i class="fas fa-rocket"></i> LabeX</h1>
+        <h1><i className="fas fa-rocket"></i> LabeX</h1>
       </ContainerTitle>
       <ContainerButtons>
         <ContainerLeft>
-          <ButtonThreeD text="Viagens" onClick={() => goToListTripsPage(navigate)} />
+          <ButtonThreeD text="Viagens" title="Viagens" cor="darkblue" onClick={() => goToListTripsPage(navigate)} />
         </ContainerLeft>
         <ContainerRight>
-        <ButtonThreeD text="Admin" onClick={() => goToLoginPage(navigate)}/>
+        <ButtonThreeD text="Admin" title="Painel Admin" onClick={() => goToAdminHomePage(navigate)}/>
         </ContainerRight>
       </ContainerButtons>
     </Container>

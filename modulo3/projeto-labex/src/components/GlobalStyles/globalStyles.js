@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     min-height: 100vh;
     box-sizing: border-box;
-    font-family: Open-Sans, Helvetica, Sans-Serif;
+    font-family: 'Poppins', sans-serif;
     background-image: linear-gradient(rgb(1,73,99) 25%, 75%, rgb(119, 180, 201));
     background-repeat: no-repeat;
   }

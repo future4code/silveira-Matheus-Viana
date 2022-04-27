@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import ButtonThreeD from "../components/ButtonThreeD/ButtonThreeD";
-import { goBack, goToAdminHomePage } from "../routes/coordinator";
+import { goToHomePage } from "../routes/coordinator";
 
 
 const Container = styled.div`
@@ -27,9 +28,23 @@ const ContainerCard = styled.div`
   background-color: white;
 `;
 
+const FormularioLogin = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ContainerTituloCard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+
 const TituloCard = styled.h2`
+  height: 40px;
   font-size: 32px;
-  margin-top: 0;
 `;
 
 const InputForm = styled.input`
@@ -42,42 +57,94 @@ const InputForm = styled.input`
   margin-bottom: 15px;
 `;
 
-const ContainerButtons = styled.div`
+const ContainerButtonSubmit = styled.div`
   display: flex;
   justify-content: center;
   align-items: center; 
 `;
 
-const ContainerLeft = styled.div`
-  margin-top: 15px;
-  margin-right: 10px;
-`;
-
-const ContainerRight = styled.div`
-  margin-top: 15px;
-  margin-left: 10px;
+const BlankSpace = styled.div`
+  width: 20px;
+  height: 23px;
+  padding: 12px 42px;
 `;
 
 const LoginPage = (props) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onChangeEmail = (event) => {
+    setEmail(event.target.value);
+  }
+
+  const onChangePassword = (event) => {
+    setPassword(event.target.value);
+  }
+
+  const onSubmitLogin = () => {
+    const HEADERS = {
+      headers: {
+        "Content-Type": "application/json" 
+      }
+    }
+
+    const body = {
+      email: email,
+      password: password
+    };
+
+    axios
+      .post(
+        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-mantini-silveira/login",
+        body, HEADERS
+      )
+      .then((response) => {
+        localStorage.setItem("token", response.data.token);
+        navigate("/admin/trips/list/");
+      })
+      .catch((error) => {
+        alert(error.response.data.message);
+      });
+  }
+
+  /* Função para não dar refresh na página ao clicar no submit */
+  const handleSubmit = function(e) {
+    e.preventDefault();
+  }
 
   return (
     <Container>
       <ContainerCard>
 
-        <TituloCard><i class="fas fa-user-secret"></i> Login</TituloCard>
-        <InputForm placeholder="Email" />
-        <InputForm placeholder="Senha" />
-        <ContainerButtons>
-          <ContainerLeft>
-            <ButtonThreeD text={<i class="fas fa-long-arrow-alt-left"></i>} color="red" onClick={() => goBack(navigate)} />
-          </ContainerLeft>
-          <ContainerRight>
-            <ButtonThreeD text={<i class="fas fa-sign-in-alt"></i>} color="green" onClick={() => goToAdminHomePage(navigate)} />
-          </ContainerRight>
-          
-          
-        </ContainerButtons>
+        <ContainerTituloCard>
+          <ButtonThreeD text={<i className="fas fa-long-arrow-alt-left"></i>} title="Voltar" cor="red" onClick={() => goToHomePage(navigate)} />
+          <TituloCard>
+            <i className="fas fa-user-secret"></i> Login
+          </TituloCard>
+          <BlankSpace/>
+        </ContainerTituloCard>
+        
+        <FormularioLogin onSubmit={handleSubmit}>
+          <InputForm 
+            placeholder="Email" 
+            type="email"
+            value={email}
+            onChange={onChangeEmail}
+            required
+          />
+          <InputForm 
+            placeholder="Senha" 
+            type="password"
+            value={password}
+            onChange={onChangePassword}
+            required
+          />
+          <ContainerButtonSubmit>
+              <ButtonThreeD text={<i className="fas fa-sign-in-alt"></i>} title="Enviar" cor="green" onClick={() => onSubmitLogin()} />            
+          </ContainerButtonSubmit>
+        </FormularioLogin>
 
       </ContainerCard>
     </Container>
