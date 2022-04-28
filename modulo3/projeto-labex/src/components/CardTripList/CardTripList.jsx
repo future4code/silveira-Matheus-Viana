@@ -2,12 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const CardList = styled.li`  
-  width: 500px;
+  width: 100%;
   background-color: white;
   border-radius: 15px;
   list-style: none;
   box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.35);
-  margin-bottom: 30px;
 `;
 
 const ContainerInfo = styled.div`

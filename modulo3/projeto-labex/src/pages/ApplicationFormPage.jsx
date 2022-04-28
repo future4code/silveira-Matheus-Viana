@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import axios from 'axios';
@@ -16,9 +16,20 @@ const ContainerTitulo = styled.div`
   justify-content: space-between;
   align-items: center;
   h2{
+    text-align: center;
     font-size: 32px;
     color: white;
     text-shadow: 2px 2px 2px #000000cf;
+  }
+  @media screen and (min-device-width : 768px) and (max-device-width : 1200px) {
+    h2{
+      font-size: 26px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    h2{
+      font-size: 18px;
+    }
   }
 `;
 
@@ -34,6 +45,16 @@ const BlankSpace = styled.div`
   width: 20px;
   height: 23px;
   padding: 12px 42px;
+  @media screen and (min-device-width : 768px) and (max-device-width : 1200px) {
+    width: 0;
+    height: 0;
+    padding: 0;
+  }
+  @media screen and (max-width: 767px){
+    width: 0;
+    height: 0;
+    padding: 0;
+  }
 `;
 
 const InputForm = styled.input`
@@ -44,6 +65,13 @@ const InputForm = styled.input`
   padding: 0 8px;
   font-size: 16px;
   margin-bottom: 15px;
+  @media screen and (min-device-width : 768px) and (max-device-width : 1200px) {
+    width: 94%;
+  }
+  @media screen and (max-width: 767px){
+    width: 90%;
+    height: 40px;
+  }
 `;
 
 const SelectForm = styled.select`
@@ -54,6 +82,13 @@ const SelectForm = styled.select`
   padding: 0 8px;
   font-size: 16px;
   margin-bottom: 15px;
+  @media screen and (min-device-width : 768px) and (max-device-width : 1200px) {
+    width: 96%;
+  }
+  @media screen and (max-width: 767px){
+    width: 96%;
+    height: 40px;
+  }
 `;
 
 const ContainerButton = styled.div`  
@@ -102,11 +137,8 @@ const ApplicationFormPage = (props) => {
           cleanFields();
         })
         .catch((error) => {
-          alert(error.response.message)
-          /* cleanFields(); */
+          alert(error.response.message);
         });
-
-    console.log(form);
   }
 
   return (

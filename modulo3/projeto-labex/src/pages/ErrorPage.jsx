@@ -20,8 +20,18 @@ const Card = styled.div`
   background-color: white;
   border-radius: 15px;
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  h2{
+    text-align: center;
+  }
   i{
     font-size: 150px;
+  }
+  @media screen and (max-width: 767px){
+    height: 45%;
+    width: 90%;
+  i{
+    font-size: 100px;
+  }
   }
 `;
 

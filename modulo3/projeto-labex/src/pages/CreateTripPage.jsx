@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import axios from 'axios';
@@ -16,9 +16,15 @@ const ContainerTitulo = styled.div`
   justify-content: space-between;
   align-items: center;
   h2{
+    text-align: center;
     font-size: 32px;
     color: white;
     text-shadow: 2px 2px 2px #000000cf;
+  }
+  @media screen and (max-width: 767px){
+    h2{
+      font-size: 18px;
+    }
   }
 `;
 
@@ -33,6 +39,10 @@ const ContainerForm = styled.form`
 const BlankSpace = styled.div`
   width: 140px;
   height: 20px;
+  @media screen and (max-width: 767px){
+    width: 0;
+    height: 0;
+  }
 `;
 
 const InputForm = styled.input`
@@ -44,6 +54,13 @@ const InputForm = styled.input`
   font-family: inherit;
   font-size: inherit;
   margin-bottom: 15px;
+  @media screen and (min-device-width : 768px) and (max-device-width : 1200px) {
+    width: 90%;
+  }
+  @media screen and (max-width: 767px){
+    width: 90%;
+    height: 40px;
+  }
 `;
 
 const TextAreaForm = styled.textarea`
@@ -56,6 +73,13 @@ const TextAreaForm = styled.textarea`
   margin-bottom: 15px;
   font-family: inherit;
   font-size: inherit;
+  @media screen and (min-device-width : 768px) and (max-device-width : 1200px) {
+    width: 90%;
+  }
+  @media screen and (max-width: 767px){
+    width: 90%;
+    height: 110px;
+  }
 `;
 
 const SelectForm = styled.select`
@@ -66,6 +90,13 @@ const SelectForm = styled.select`
   padding: 0 8px;
   font-size: 16px;
   margin-bottom: 15px;
+  @media screen and (min-device-width : 768px) and (max-device-width : 1200px) {
+    width: 93%;
+  }
+  @media screen and (max-width: 767px){
+    width: 98%;
+    height: 40px;
+  }
 `;
 
 const ContainerButton = styled.div`  

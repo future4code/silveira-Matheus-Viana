@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import axios from 'axios';
@@ -6,6 +6,7 @@ import ButtonThreeDSmall from "../components/ButtonThreeDSmall/ButtonThreeDSmall
 import { goToHomePage, goToLoginPage ,goToCreateTripPage, goToTripDetailsPage } from "../routes/coordinator";
 import useProtectedPage from '../hooks/useProtectedPage';
 import useRequestData from "../hooks/useRequestData";
+import Loading from "../components/Loading/Loading";
 
 const Container = styled.div`
   padding: 20px;
@@ -16,9 +17,15 @@ const ContainerTitulo = styled.div`
   justify-content: space-between;
   align-items: center;
   h2{
+    text-align: center;
     font-size: 32px;
     color: white;
     text-shadow: 2px 2px 2px #000000cf;
+  }
+  @media screen and (max-width: 768px){
+    h2{
+      font-size: 18px;
+    }
   }
 `;
 
@@ -44,15 +51,6 @@ const ContainerViagens = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-
-const CarregandoMessage = styled.h1`
-  color: rgb(1,73,99);
-  text-shadow: 2px 2px 2px #000000cf;
-  padding: 10px 20px;
-  border-radius: 15px;
-  background-color: white;
 `;
 
 const ContainerGrid = styled.div`
@@ -145,7 +143,7 @@ const AdminHomePage = (props) => {
       goToTripDetailsPage(navigate, trip.id);
     }
     }>{trip.name}</CardTripName> <DeleteButton onClick={() => {
-      onClickDeleteTrip(trip.id)
+      onClickDeleteTrip(trip.id);
     }}><i className="far fa-trash-alt"></i></DeleteButton></CardTrip>
   });
 
@@ -191,7 +189,7 @@ const AdminHomePage = (props) => {
           <ButtonThreeDSmall text={<i className="fas fa-plus"></i>} title="Criar Viagem" cor="green" onClick={() => goToCreateTripPage(navigate)} />
       </ContainerSubTitulo>      
       <ContainerViagens>
-        {isLoading && <CarregandoMessage>Aguarde! Carregando...</CarregandoMessage>}
+        {isLoading && <Loading/>}
         {!isLoading && error && <h1>Verifique a sua conexão com a internet</h1>}
         {!isLoading &&
           listaTrips &&

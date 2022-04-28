@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import ButtonThreeDSmall from "../components/ButtonThreeDSmall/ButtonThreeDSmall";
 import { goToHomePage } from "../routes/coordinator";
 import useForm from "../hooks/useForm";
-
 
 const Container = styled.div`
   display: flex;
@@ -27,6 +26,11 @@ const ContainerCard = styled.div`
   box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.35);
   padding: 0 30px;
   background-color: white;
+  @media screen and (max-width: 767px){
+    width: 80%;
+    height: 50%;
+    padding: 0 20px;
+  }
 `;
 
 const FormularioLogin = styled.form`
@@ -46,6 +50,10 @@ const ContainerTituloCard = styled.div`
 const TituloCard = styled.h2`
   height: 40px;
   font-size: 32px;
+  @media screen and (max-width: 767px){
+    font-size: 26px;
+    margin: 20px;
+  }
 `;
 
 const InputForm = styled.input`
@@ -56,6 +64,9 @@ const InputForm = styled.input`
   padding: 0 8px;
   font-size: 16px;
   margin-bottom: 15px;
+  @media screen and (max-width: 767px){
+    width: 100%;
+  }
 `;
 
 const ContainerButtonSubmit = styled.div`
@@ -68,6 +79,11 @@ const BlankSpace = styled.div`
   width: 20px;
   height: 23px;
   padding: 12px 42px;
+  @media screen and (max-width: 767px){
+  width: 10px;
+  height: 0;
+  padding: 6px 18px;
+  }
 `;
 
 const LoginPage = (props) => {

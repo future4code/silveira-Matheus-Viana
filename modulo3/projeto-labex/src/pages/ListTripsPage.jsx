@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import ButtonThreeDSmall from "../components/ButtonThreeDSmall/ButtonThreeDSmall";
 import { goBack, goToApplicationFormPage } from "../routes/coordinator";
 import CardTripList from "../components/CardTripList/CardTripList";
 import useRequestData from "../hooks/useRequestData";
+import Loading from "../components/Loading/Loading";
 
 const Container = styled.div`
   padding: 20px;
@@ -14,16 +15,33 @@ const ContainerTitulo = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   h2{
     font-size: 32px;
     color: white;
     text-shadow: 2px 2px 2px #000000cf;
   }
+  @media screen and (max-width: 768px){
+    h2{
+      font-size: 18px;
+    }
+  }
 `;
 
-const ContainerBtnVoltar = styled.div`  
+const ContainerBtn = styled.div`  
   padding: 12px 42px 12px 0;
   width: 110px;
+  @media screen and (max-width: 768px){
+    padding: 0;
+  }
+`;
+
+const ContainerBtnRight = styled.div`  
+  padding: 12px 0 12px 42px;
+  width: 110px;
+  @media screen and (max-width: 768px){
+    padding: 0;
+  }
 `;
 
 const ContainerViagens = styled.div`  
@@ -32,17 +50,32 @@ const ContainerViagens = styled.div`
   align-items: center;
 `;
 
-const ListaViagens = styled.ul`
-  padding: 0;
-  margin: 15px 0 0 0;
+const ContainerGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+  width: 100%;
+  padding: 20px 0;
+  @media screen and (max-width: 768px){
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 `;
 
-const CarregandoMessage = styled.h1`
-  color: rgb(1,73,99);
-  text-shadow: 2px 2px 2px #000000cf;
-  padding: 10px 20px;
-  border-radius: 15px;
-  background-color: white;
+const ContainerEmptyMessage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1/-1;
+  padding: 0;
+  h3{
+    color: rgb(1,73,99);
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: white;
+    text-align: center;    
+  }
 `;
 
 
@@ -59,21 +92,23 @@ const LisTripsPage = (props) => {
   return (
     <Container>
       <ContainerTitulo>
-        <ContainerBtnVoltar>
+        <ContainerBtn>
           <ButtonThreeDSmall text={<i className="fas fa-long-arrow-alt-left"></i>} title="Voltar" cor="red" onClick={() => goBack(navigate)} />
-        </ContainerBtnVoltar>
+        </ContainerBtn>
           <h2>Lista de Viagens</h2>
-          <ButtonThreeDSmall text={<i className="fas fa-file-signature"></i>} title="Inscreva-se" cor="green" onClick={() => goToApplicationFormPage(navigate)} />
+          <ContainerBtnRight>
+            <ButtonThreeDSmall text={<i className="fas fa-file-signature"></i>} title="Inscreva-se" cor="green" onClick={() => goToApplicationFormPage(navigate)} />
+          </ContainerBtnRight>
       </ContainerTitulo>
       <ContainerViagens>
-        {isLoading && <CarregandoMessage>Aguarde! Carregando...</CarregandoMessage>}
+        {isLoading && <Loading/>}
         {!isLoading && error && <h1>Deu erro! Verifique a sua conexão com a internet</h1>}
         {!isLoading &&
           listaTrips &&
           (listaTrips.length > 0 ? (
-            <ListaViagens>{listaTrips}</ListaViagens>
+            <ContainerGrid>{listaTrips}</ContainerGrid>
           ) : (
-            "Viagens não encontradas"
+            <ContainerEmptyMessage><h3>Não há viagens disponíveis no momento.</h3></ContainerEmptyMessage>
           ))}
       </ContainerViagens>
       

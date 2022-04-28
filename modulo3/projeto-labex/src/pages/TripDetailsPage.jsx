@@ -7,6 +7,7 @@ import { goBack } from "../routes/coordinator";
 import useProtectedPage from '../hooks/useProtectedPage';
 import CardCandidatePendingList from "../components/CardCandidatePendingList/CardCandidatePendingList";
 import CardCandidateApprovedList from "../components/CardCandidateApprovedList/CardCandidateApprovedList";
+import Loading from "../components/Loading/Loading";
 
 const Container = styled.div`
   padding: 20px;
@@ -17,9 +18,20 @@ const ContainerTitulo = styled.div`
   justify-content: space-between;
   align-items: center;
   h2{
+    text-align: center;
     font-size: 32px;
     color: white;
     text-shadow: 2px 2px 2px #000000cf;
+  }
+  @media screen and (min-device-width : 768px) and (max-device-width : 1200px) {
+    h2{
+      font-size: 26px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    h2{
+      font-size: 18px;
+    }
   }
 `;
 
@@ -27,12 +39,20 @@ const BlankSpace = styled.div`
   width: 20px;
   height: 23px;
   padding: 12px 42px;
+  @media screen and (max-width: 767px){
+    width: 0;
+    height: 0;
+    padding: 0;
+  }
 `;
 
 const ContainerCardInfoPlaneta = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 767px){
+    margin-top: 15px;
+  }
 `;
 
 const CardInfoPlaneta = styled.div`
@@ -44,6 +64,9 @@ const CardInfoPlaneta = styled.div`
   background-color: white;
   border-radius: 15px;  
   box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.35);
+  @media screen and (max-width: 767px){
+    padding: 0 20px;
+  }
 `;
 
 const ContainerSubTitulo = styled.div`
@@ -71,19 +94,10 @@ const ContainerGrid = styled.div`
   row-gap: 20px;
   width: 100%;
   padding: 20px 0;
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 767px){
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
-`;
-
-const CarregandoMessage = styled.h1`
-  color: rgb(1,73,99);
-  text-shadow: 2px 2px 2px #000000cf;
-  padding: 10px 20px;
-  border-radius: 15px;
-  background-color: white;
-  text-align: center;
 `;
 
 const ContainerEmptyMessage = styled.div`
@@ -160,7 +174,6 @@ const TripDetailsPage = (props) => {
           document.location.reload(true);
       })
       .catch((err) => {
-          console.log(err)
       })
   }
 
@@ -177,7 +190,7 @@ const TripDetailsPage = (props) => {
 
   return (
     <Container>
-      {isLoading && <CarregandoMessage>Aguarde! Carregando...</CarregandoMessage>}
+      {isLoading && <Loading/>}
       {!isLoading &&
         tripInfo &&
         (tripInfo !== undefined ? (            

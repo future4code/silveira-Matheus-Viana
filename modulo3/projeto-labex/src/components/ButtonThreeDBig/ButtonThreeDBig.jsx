@@ -56,6 +56,13 @@ const ButtonPushable = styled.button`
     :focus:not(:focus-visible) {
       outline: none;
     }
+  @media screen and (max-width: 768px){
+    span{
+      padding: 8px 32px;
+      font-size: 1.1rem;
+    }
+  }
+    
 `;
 
 const Shadow = styled.div`
