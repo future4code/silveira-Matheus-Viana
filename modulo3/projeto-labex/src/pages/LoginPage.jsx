@@ -28,7 +28,7 @@ const ContainerCard = styled.div`
   background-color: white;
   @media screen and (max-width: 767px){
     width: 80%;
-    height: 50%;
+    height: 260px;
     padding: 0 20px;
   }
 `;
