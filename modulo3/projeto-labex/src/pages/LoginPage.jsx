@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import ButtonThreeD from "../components/ButtonThreeD/ButtonThreeD";
+import ButtonThreeDSmall from "../components/ButtonThreeDSmall/ButtonThreeDSmall";
 import { goToHomePage } from "../routes/coordinator";
+import useForm from "../hooks/useForm";
 
 
 const Container = styled.div`
@@ -71,17 +72,8 @@ const BlankSpace = styled.div`
 
 const LoginPage = (props) => {
   const navigate = useNavigate();
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const onChangeEmail = (event) => {
-    setEmail(event.target.value);
-  }
-
-  const onChangePassword = (event) => {
-    setPassword(event.target.value);
-  }
+  
+  const { form, onChangeForm, cleanFields } = useForm({ email: "", password: "" });
 
   const onSubmitLogin = () => {
     const HEADERS = {
@@ -90,15 +82,10 @@ const LoginPage = (props) => {
       }
     }
 
-    const body = {
-      email: email,
-      password: password
-    };
-
     axios
       .post(
         "https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-mantini-silveira/login",
-        body, HEADERS
+        form, HEADERS
       )
       .then((response) => {
         localStorage.setItem("token", response.data.token);
@@ -106,7 +93,9 @@ const LoginPage = (props) => {
       })
       .catch((error) => {
         alert(error.response.data.message);
+        cleanFields();
       });
+
   }
 
   /* Função para não dar refresh na página ao clicar no submit */
@@ -119,7 +108,7 @@ const LoginPage = (props) => {
       <ContainerCard>
 
         <ContainerTituloCard>
-          <ButtonThreeD text={<i className="fas fa-long-arrow-alt-left"></i>} title="Voltar" cor="red" onClick={() => goToHomePage(navigate)} />
+          <ButtonThreeDSmall text={<i className="fas fa-long-arrow-alt-left"></i>} title="Voltar" cor="red" onClick={() => goToHomePage(navigate)} />
           <TituloCard>
             <i className="fas fa-user-secret"></i> Login
           </TituloCard>
@@ -130,19 +119,23 @@ const LoginPage = (props) => {
           <InputForm 
             placeholder="Email" 
             type="email"
-            value={email}
-            onChange={onChangeEmail}
+            name="email"
+            value={form.email}
+            onChange={onChangeForm}
             required
           />
           <InputForm 
             placeholder="Senha" 
             type="password"
-            value={password}
-            onChange={onChangePassword}
+            name="password"
+            value={form.password}
+            onChange={onChangeForm}
+            pattern={"^.{3,}$"}
+            title="Sua senha deve ter no mínimo 3 caracteres"
             required
           />
           <ContainerButtonSubmit>
-              <ButtonThreeD text={<i className="fas fa-sign-in-alt"></i>} title="Enviar" cor="green" onClick={() => onSubmitLogin()} />            
+              <ButtonThreeDSmall text={<i className="fas fa-sign-in-alt"></i>} title="Enviar" cor="green" onClick={() => onSubmitLogin()} />            
           </ContainerButtonSubmit>
         </FormularioLogin>
 

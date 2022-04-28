@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import ButtonThreeD from "../components/ButtonThreeD/ButtonThreeD";
+import axios from 'axios';
+import ButtonThreeDSmall from "../components/ButtonThreeDSmall/ButtonThreeDSmall";
 import { goToHomePage, goToLoginPage ,goToCreateTripPage, goToTripDetailsPage } from "../routes/coordinator";
 import useProtectedPage from '../hooks/useProtectedPage';
 import useRequestData from "../hooks/useRequestData";
@@ -97,6 +98,7 @@ const CardTripName = styled.div`
   cursor: pointer; 
   border-radius: 15px 0 0 15px;
   text-align: center;
+  padding: 0 20px;
   :hover{    
     background-color: #0066ff84;
     opacity: 0.8;
@@ -143,7 +145,7 @@ const AdminHomePage = (props) => {
       goToTripDetailsPage(navigate, trip.id);
     }
     }>{trip.name}</CardTripName> <DeleteButton onClick={() => {
-      alert('TESTE- Viagem Deletada com Sucesso!')
+      onClickDeleteTrip(trip.id)
     }}><i className="far fa-trash-alt"></i></DeleteButton></CardTrip>
   });
 
@@ -152,16 +154,41 @@ const AdminHomePage = (props) => {
     goToLoginPage(navigate);
   }
 
+  
+  const onClickDeleteTrip = (idTrip) => {
+    
+    const HEADERS = {
+      headers: {
+        "Content-Type": "application/json",
+        "auth": localStorage.getItem("token") 
+      }
+    }
+    
+    axios
+      .delete(
+        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-mantini-silveira/trips/${idTrip}`,
+        HEADERS
+      )
+      .then((response) => { 
+        alert("Viagem deletada com sucesso!");
+        document.location.reload(true); 
+      })
+      .catch((error) => {
+        alert("Não foi possível deletar a viagem. Tente novamente mais tarde!")
+      });
+
+  }
+
   return (
     <Container>
       <ContainerTitulo>
-          <ButtonThreeD text={<i className="fas fa-long-arrow-alt-left"></i>} title="Voltar" cor="red" onClick={() => goToHomePage(navigate)} />
+          <ButtonThreeDSmall text={<i className="fas fa-long-arrow-alt-left"></i>} title="Voltar" cor="red" onClick={() => goToHomePage(navigate)} />
           <h2>Painel Administrativo</h2>
-          <ButtonThreeD text={<i className="fas fa-power-off"></i>} title="Logout" onClick={onClickLogout} />
+          <ButtonThreeDSmall text={<i className="fas fa-power-off"></i>} title="Logout" onClick={onClickLogout} />
       </ContainerTitulo>
       <ContainerSubTitulo>
           <h2>Viagens</h2>
-          <ButtonThreeD text={<i className="fas fa-plus"></i>} title="Criar Viagem" cor="green" onClick={() => goToCreateTripPage(navigate)} />
+          <ButtonThreeDSmall text={<i className="fas fa-plus"></i>} title="Criar Viagem" cor="green" onClick={() => goToCreateTripPage(navigate)} />
       </ContainerSubTitulo>      
       <ContainerViagens>
         {isLoading && <CarregandoMessage>Aguarde! Carregando...</CarregandoMessage>}

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import ButtonThreeD from "../components/ButtonThreeD/ButtonThreeD";
+import ButtonThreeDBig from "../components/ButtonThreeDBig/ButtonThreeDBig";
 import { goToListTripsPage, goToAdminHomePage } from "../routes/coordinator";
-import Background from "../assets/bg-spaceship.jpg";
+import Background from "../assets/bg-planets.jpg";
+import logo from "../assets/logo.png";
 
 const Container = styled.div`
   display: flex;
@@ -19,7 +20,6 @@ const Container = styled.div`
 `;
 
 const ContainerTitle = styled.div`
-  margin-bottom: 40px;
   text-shadow: 2px 2px 2px #000000cf;
   h1{
     font-size: 42px;
@@ -41,20 +41,25 @@ const ContainerRight = styled.div`
   margin-left: 10px;
 `;
 
+const LogoImage = styled.img`
+  width: 300px;
+  height: 300px;
+`;
+
 const HomePage = (props) => {
   const navigate = useNavigate()
 
   return (
     <Container>
       <ContainerTitle>
-        <h1><i className="fas fa-rocket"></i> LabeX</h1>
+        <LogoImage src={logo} />
       </ContainerTitle>
       <ContainerButtons>
         <ContainerLeft>
-          <ButtonThreeD text="Viagens" title="Viagens" cor="darkblue" onClick={() => goToListTripsPage(navigate)} />
+          <ButtonThreeDBig text="Viagens" title="Viagens" cor="darkblue" onClick={() => goToListTripsPage(navigate)} />
         </ContainerLeft>
         <ContainerRight>
-        <ButtonThreeD text="Admin" title="Painel Admin" onClick={() => goToAdminHomePage(navigate)}/>
+        <ButtonThreeDBig text="Admin" title="Painel Admin" onClick={() => goToAdminHomePage(navigate)}/>
         </ContainerRight>
       </ContainerButtons>
     </Container>

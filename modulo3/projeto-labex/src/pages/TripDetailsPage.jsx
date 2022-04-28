@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import axios from 'axios';
-import ButtonThreeD from "../components/ButtonThreeD/ButtonThreeD";
+import ButtonThreeDSmall from "../components/ButtonThreeDSmall/ButtonThreeDSmall";
 import { goBack } from "../routes/coordinator";
 import useProtectedPage from '../hooks/useProtectedPage';
 import CardCandidatePendingList from "../components/CardCandidatePendingList/CardCandidatePendingList";
@@ -40,6 +40,7 @@ const CardInfoPlaneta = styled.div`
   width: 400px;
   max-height: 300px;
   overflow-y: auto;
+  word-wrap: break-word;
   background-color: white;
   border-radius: 15px;  
   box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.35);
@@ -182,13 +183,12 @@ const TripDetailsPage = (props) => {
         (tripInfo !== undefined ? (            
           <>            
             <ContainerTitulo>
-                <ButtonThreeD text={<i className="fas fa-long-arrow-alt-left"></i>} title="Voltar" cor="red" onClick={() => goBack(navigate)} />
-                <h2>{tripInfo && tripInfo.planet}</h2>
+                <ButtonThreeDSmall text={<i className="fas fa-long-arrow-alt-left"></i>} title="Voltar" cor="red" onClick={() => goBack(navigate)} />
+                <h2>{tripInfo && tripInfo.name}</h2>
                 <BlankSpace/>
             </ContainerTitulo>
             <ContainerCardInfoPlaneta>
               <CardInfoPlaneta>
-                <p><b>Nome da Viagem:</b> {tripInfo && tripInfo.name}</p>
                 <p><b>Descrição:</b> {tripInfo && tripInfo.description}</p>
                 <p><b>Planeta:</b> {tripInfo && tripInfo.planet}</p>
                 <p><b>Duração:</b> {tripInfo && tripInfo.durationInDays} dias</p>

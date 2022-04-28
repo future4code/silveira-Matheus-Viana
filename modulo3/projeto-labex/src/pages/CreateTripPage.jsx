@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import ButtonThreeD from "../components/ButtonThreeD/ButtonThreeD";
+import axios from 'axios';
+import ButtonThreeDSmall from "../components/ButtonThreeDSmall/ButtonThreeDSmall";
 import { goBack } from "../routes/coordinator";
 import useProtectedPage from '../hooks/useProtectedPage';
+import useForm from "../hooks/useForm";
 
 const Container = styled.div`
   padding: 20px;
@@ -20,7 +22,7 @@ const ContainerTitulo = styled.div`
   }
 `;
 
-const ContainerForm = styled.div`
+const ContainerForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,9 +40,22 @@ const InputForm = styled.input`
   height: 50px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  padding: 0 8px;
-  font-size: 16px;
+  padding: 0 10px;
+  font-family: inherit;
+  font-size: inherit;
   margin-bottom: 15px;
+`;
+
+const TextAreaForm = styled.textarea`
+  width: 400px;
+  height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-family: inherit;
+  font-size: inherit;
 `;
 
 const SelectForm = styled.select`
@@ -59,27 +74,72 @@ const ContainerButton = styled.div`
 
 
 const CreateTripsPage = (props) => {
-  const navigate = useNavigate();
-
   useProtectedPage();
+  const navigate = useNavigate();
+  const { form, onChangeForm, cleanFields } = useForm({ 
+    name: "", 
+    planet: "", 
+    date: "", 
+    description: "", 
+    durationInDays: "" 
+  });
+
+  /* Função para não dar refresh na página ao clicar no submit */
+  const handleSubmit = function(e) {
+    e.preventDefault();
+  }
+
+  const onSubmitCreateTrip = () => {
+              
+      const HEADERS = {
+        headers: {
+          "Content-Type": "application/json",
+          "auth": localStorage.getItem("token") 
+        }
+      }
+
+      axios
+        .post(
+          "https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-mantini-silveira/trips",
+          form, HEADERS
+        )
+        .then((response) => { 
+          alert("Viagem cadastrada com sucesso!");
+          navigate("/admin/trips/list/"); 
+        })
+        .catch((error) => {
+          cleanFields();
+        });
+
+  }
+
 
   return (
     <Container>
       <ContainerTitulo>
-          <ButtonThreeD text={<i className="fas fa-long-arrow-alt-left"></i>} title="Voltar" cor="red" onClick={() => goBack(navigate)} />
+          <ButtonThreeDSmall text={<i className="fas fa-long-arrow-alt-left"></i>} title="Voltar" cor="red" onClick={() => goBack(navigate)} />
           <h2>Criar Nova Viagem</h2>
           <BlankSpace/>
       </ContainerTitulo>
-      <ContainerForm>
-        <InputForm placeholder="Nome"/>
-        <SelectForm>
-          <option>Escolha um Planeta</option>
+      <ContainerForm onSubmit={handleSubmit}>
+        <InputForm placeholder="Nome" type={"text"} value={form.name} name={"name"} onChange={onChangeForm} pattern={"^.{5,}"} title={"O nome deve ter no mínimo 5 letras."} required/>
+        <SelectForm name={"planet"} defaultValue={""} onChange={onChangeForm} required>
+          <option value={""} disabled>Escolha um Planeta</option>
+          <option value={"Mercúrio"}>Mercúrio</option>
+          <option value={"Vênus"}>Vênus</option>
+          <option value={"Terra"}>Terra</option>
+          <option value={"Marte"}>Marte</option>
+          <option value={"Júpiter"}>Júpiter</option>
+          <option value={"Saturno"}>Saturno</option>
+          <option value={"Urano"}>Urano</option>
+          <option value={"Netuno"}>Netuno</option>
+          <option value={"Plutão"}>Plutão</option>
         </SelectForm>
-        <InputForm type="date"/>
-        <InputForm placeholder="Descrição"/>
-        <InputForm placeholder="Duração em dias"/>
+        <InputForm type="date" id="inputDate" value={form.date} name={"date"} onChange={onChangeForm} min={new Date().toISOString().slice(0, 10)} required/>
+        <TextAreaForm placeholder="Descrição" type={"text"} value={form.description} name={"description"} onChange={onChangeForm} pattern={"^.{30,}"} title={"A descrição deve ter no mínimo 30 letras."} required/>
+        <InputForm placeholder="Duração em dias" type={"number"} value={form.durationInDays} name={"durationInDays"} min={50} onChange={onChangeForm} required/>
         <ContainerButton>
-          <ButtonThreeD text={<i className="fas fa-save"></i>} cor="green" title="Enviar" onClick={() => alert("TESTE - Formulário Enviado com Sucesso!")} />
+          <ButtonThreeDSmall text={<i className="fas fa-save"></i>} cor="green" title="Enviar" onClick={() => onSubmitCreateTrip()} />
         </ContainerButton>
       </ContainerForm>
     </Container>

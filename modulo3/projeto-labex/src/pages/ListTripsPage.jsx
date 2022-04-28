@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import ButtonThreeD from "../components/ButtonThreeD/ButtonThreeD";
+import ButtonThreeDSmall from "../components/ButtonThreeDSmall/ButtonThreeDSmall";
 import { goBack, goToApplicationFormPage } from "../routes/coordinator";
 import CardTripList from "../components/CardTripList/CardTripList";
 import useRequestData from "../hooks/useRequestData";
@@ -60,21 +60,21 @@ const LisTripsPage = (props) => {
     <Container>
       <ContainerTitulo>
         <ContainerBtnVoltar>
-          <ButtonThreeD text={<i className="fas fa-long-arrow-alt-left"></i>} title="Voltar" cor="red" onClick={() => goBack(navigate)} />
+          <ButtonThreeDSmall text={<i className="fas fa-long-arrow-alt-left"></i>} title="Voltar" cor="red" onClick={() => goBack(navigate)} />
         </ContainerBtnVoltar>
           <h2>Lista de Viagens</h2>
-          <ButtonThreeD text={<i className="fas fa-file-signature"></i>} title="Inscreva-se" cor="green" onClick={() => goToApplicationFormPage(navigate)} />
+          <ButtonThreeDSmall text={<i className="fas fa-file-signature"></i>} title="Inscreva-se" cor="green" onClick={() => goToApplicationFormPage(navigate)} />
       </ContainerTitulo>
       <ContainerViagens>
         {isLoading && <CarregandoMessage>Aguarde! Carregando...</CarregandoMessage>}
-      {!isLoading && error && <h1>Deu erro, contrate uma internet melhor</h1>}
-      {!isLoading &&
-        listaTrips &&
-        (listaTrips.length > 0 ? (
-          <ListaViagens>{listaTrips}</ListaViagens>
-        ) : (
-          "Viagens não encontradas"
-        ))}
+        {!isLoading && error && <h1>Deu erro! Verifique a sua conexão com a internet</h1>}
+        {!isLoading &&
+          listaTrips &&
+          (listaTrips.length > 0 ? (
+            <ListaViagens>{listaTrips}</ListaViagens>
+          ) : (
+            "Viagens não encontradas"
+          ))}
       </ContainerViagens>
       
     </Container>

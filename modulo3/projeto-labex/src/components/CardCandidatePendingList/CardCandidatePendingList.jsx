@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ButtonThreeD from "../ButtonThreeD/ButtonThreeD";
+import ButtonThreeDSmall from "../ButtonThreeDSmall/ButtonThreeDSmall";
 
 const CardList = styled.li`  
   width: 100%;
@@ -53,10 +53,10 @@ const CardCandidatePendingList = (props) => {
       </ContainerInfo>
       <ContainerButtons>    
         <ContainerButtonLeft>
-          <ButtonThreeD text={<i className="far fa-times-circle"></i>} title="Reprovar" cor="red" onClick={() => props.decideCandidate(props.id, false)} />   
+          <ButtonThreeDSmall text={<i className="far fa-times-circle"></i>} title="Reprovar" cor="red" onClick={() => props.decideCandidate(props.id, false)} />   
         </ContainerButtonLeft>   
         <ContainerButtonRight>
-          <ButtonThreeD text={<i className="far fa-check-circle"></i>} title="Aprovar" cor="green" onClick={() => props.decideCandidate(props.id, true)} /> 
+          <ButtonThreeDSmall text={<i className="far fa-check-circle"></i>} title="Aprovar" cor="green" onClick={() => props.decideCandidate(props.id, true)} /> 
         </ContainerButtonRight>          
       </ContainerButtons>
     </CardList>
