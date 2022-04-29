@@ -20,11 +20,28 @@ const Container = styled.div`
 `;
 
 const ContainerTitle = styled.div`
-  text-shadow: 2px 2px 2px #000000cf;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 2px rgb(1,73,99);
   h1{
-    font-size: 42px;
-    color: white;
+    text-align: center;
+    font-size: 32px;
+    color: rgb(119, 180, 201);
+    margin-top: 0;
+    margin-bottom: 40px;
   }
+  @media screen and (max-width: 767px){
+    h1{
+      font-size: 18px;
+    }
+  }
+`;
+
+const LogoImage = styled.img`
+  width: 300px;
+  height: 300px;
 `;
 
 const ContainerButtons = styled.div`
@@ -41,11 +58,6 @@ const ContainerRight = styled.div`
   margin-left: 10px;
 `;
 
-const LogoImage = styled.img`
-  width: 300px;
-  height: 300px;
-`;
-
 const HomePage = (props) => {
   const navigate = useNavigate()
 
@@ -53,6 +65,7 @@ const HomePage = (props) => {
     <Container>
       <ContainerTitle>
         <LogoImage src={logo} />
+        <h1>Aventuras Intergaláticas</h1>
       </ContainerTitle>
       <ContainerButtons>
         <ContainerLeft>

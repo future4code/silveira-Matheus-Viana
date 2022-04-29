@@ -109,7 +109,6 @@ const LoginPage = (props) => {
       })
       .catch((error) => {
         alert(error.response.data.message);
-        cleanFields();
       });
 
   }

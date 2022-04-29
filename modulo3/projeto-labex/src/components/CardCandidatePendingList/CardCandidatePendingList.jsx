@@ -53,10 +53,10 @@ const CardCandidatePendingList = (props) => {
       </ContainerInfo>
       <ContainerButtons>    
         <ContainerButtonLeft>
-          <ButtonThreeDSmall text={<i className="far fa-times-circle"></i>} title="Reprovar" cor="red" onClick={() => props.decideCandidate(props.id, false)} />   
+          <ButtonThreeDSmall text={<i className="far fa-check-circle"></i>} title="Aprovar" cor="green" onClick={() => props.decideCandidate(props.id, true)} />  
         </ContainerButtonLeft>   
         <ContainerButtonRight>
-          <ButtonThreeDSmall text={<i className="far fa-check-circle"></i>} title="Aprovar" cor="green" onClick={() => props.decideCandidate(props.id, true)} /> 
+          <ButtonThreeDSmall text={<i className="far fa-times-circle"></i>} title="Reprovar" cor="red" onClick={() => props.decideCandidate(props.id, false)} />  
         </ContainerButtonRight>          
       </ContainerButtons>
     </CardList>

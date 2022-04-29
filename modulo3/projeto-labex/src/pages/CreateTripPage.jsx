@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import axios from 'axios';
@@ -6,6 +6,7 @@ import ButtonThreeDSmall from "../components/ButtonThreeDSmall/ButtonThreeDSmall
 import { goBack } from "../routes/coordinator";
 import useProtectedPage from '../hooks/useProtectedPage';
 import useForm from "../hooks/useForm";
+import Loading from "../components/Loading/Loading";
 
 const Container = styled.div`
   padding: 20px;
@@ -63,25 +64,6 @@ const InputForm = styled.input`
   }
 `;
 
-const TextAreaForm = styled.textarea`
-  width: 400px;
-  height: 150px;
-  overflow-y: auto;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 15px;
-  font-family: inherit;
-  font-size: inherit;
-  @media screen and (min-device-width : 768px) and (max-device-width : 1200px) {
-    width: 90%;
-  }
-  @media screen and (max-width: 767px){
-    width: 90%;
-    height: 110px;
-  }
-`;
-
 const SelectForm = styled.select`
   width: 420px;
   height: 50px;
@@ -107,6 +89,7 @@ const ContainerButton = styled.div`
 const CreateTripsPage = (props) => {
   useProtectedPage();
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   const { form, onChangeForm, cleanFields } = useForm({ 
     name: "", 
     planet: "", 
@@ -115,12 +98,9 @@ const CreateTripsPage = (props) => {
     durationInDays: "" 
   });
 
-  /* Função para não dar refresh na página ao clicar no submit */
-  const handleSubmit = function(e) {
-    e.preventDefault();
-  }
-
-  const onSubmitCreateTrip = () => {
+  const onSubmitCreateTrip = (e) => {
+      e.preventDefault();
+      setIsLoading(true); 
               
       const HEADERS = {
         headers: {
@@ -135,13 +115,18 @@ const CreateTripsPage = (props) => {
           form, HEADERS
         )
         .then((response) => { 
-          alert("Viagem cadastrada com sucesso!");
-          navigate("/admin/trips/list/"); 
+          alert("Viagem cadastrada com sucesso!"); 
+          cleanFields();
+          navigate("/admin/trips/list/");
+          setIsLoading(false);
         })
         .catch((error) => {
-          cleanFields();
         });
 
+  }
+
+  const onFocusDate = () => {
+    document.getElementById('inputDate').type = 'date';
   }
 
 
@@ -152,7 +137,11 @@ const CreateTripsPage = (props) => {
           <h2>Criar Nova Viagem</h2>
           <BlankSpace/>
       </ContainerTitulo>
-      <ContainerForm onSubmit={handleSubmit}>
+
+      {isLoading && <Loading/>}
+        {!isLoading &&
+
+      <ContainerForm onSubmit={onSubmitCreateTrip}>
         <InputForm placeholder="Nome" type={"text"} value={form.name} name={"name"} onChange={onChangeForm} pattern={"^.{5,}"} title={"O nome deve ter no mínimo 5 letras."} required/>
         <SelectForm name={"planet"} defaultValue={""} onChange={onChangeForm} required>
           <option value={""} disabled>Escolha um Planeta</option>
@@ -166,13 +155,14 @@ const CreateTripsPage = (props) => {
           <option value={"Netuno"}>Netuno</option>
           <option value={"Plutão"}>Plutão</option>
         </SelectForm>
-        <InputForm type="date" id="inputDate" value={form.date} name={"date"} onChange={onChangeForm} min={new Date().toISOString().slice(0, 10)} required/>
-        <TextAreaForm placeholder="Descrição" type={"text"} value={form.description} name={"description"} onChange={onChangeForm} pattern={"^.{30,}"} title={"A descrição deve ter no mínimo 30 letras."} required/>
+        <InputForm placeholder="Data" onFocus={onFocusDate} type="text" id="inputDate" value={form.date} name={"date"} onChange={onChangeForm} min={new Date().toISOString().slice(0, 10)} required/>
+        <InputForm placeholder="Descrição" value={form.description} name={"description"} onChange={onChangeForm} pattern={"^.{30,}"} title={"A descrição deve ter no mínimo 30 letras."} required/>
         <InputForm placeholder="Duração em dias" type={"number"} value={form.durationInDays} name={"durationInDays"} min={50} onChange={onChangeForm} required/>
         <ContainerButton>
-          <ButtonThreeDSmall text={<i className="fas fa-save"></i>} cor="green" title="Enviar" onClick={() => onSubmitCreateTrip()} />
+          <ButtonThreeDSmall text={<i className="fas fa-save"></i>} cor="green" title="Enviar"/>
         </ContainerButton>
       </ContainerForm>
+    }
     </Container>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import axios from 'axios';
@@ -6,6 +6,7 @@ import ButtonThreeDSmall from "../components/ButtonThreeDSmall/ButtonThreeDSmall
 import { goBack } from "../routes/coordinator";
 import useRequestData from "../hooks/useRequestData";
 import useForm from "../hooks/useForm";
+import Loading from "../components/Loading/Loading";
 
 const Container = styled.div`
   padding: 20px;
@@ -97,6 +98,7 @@ const ContainerButton = styled.div`
 
 const ApplicationFormPage = (props) => {
   const navigate = useNavigate();  
+  const [isLoading, setIsLoading] = useState(false);
   
   const { form, onChangeForm, cleanFields } = useForm({
     name: "",
@@ -107,17 +109,14 @@ const ApplicationFormPage = (props) => {
     tripId: ""
   });
 
-  /* Função para não dar refresh na página ao clicar no submit */
-  const handleSubmit = function(e) {
-    e.preventDefault();
-  }
-
   /* Lista com informações das Viagens */
-  const [tripsList, isLoading, error] = useRequestData(
+  const [tripsList,,undefined] = useRequestData(
     "https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-mantini-silveira/trips"
   );
 
-  const onClickApplicate = () => {
+  const onClickApplicate = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
 
       const body = {
         name: form.name,
@@ -135,6 +134,8 @@ const ApplicationFormPage = (props) => {
         .then((response) => { 
           alert("Inscrição realizada com sucesso!");
           cleanFields();
+          navigate("/trips/application/"); 
+          setIsLoading(false);
         })
         .catch((error) => {
           alert(error.response.message);
@@ -148,7 +149,11 @@ const ApplicationFormPage = (props) => {
           <h2>Inscreva-se para uma viagem</h2>
           <BlankSpace/>
       </ContainerTitulo>
-      <ContainerForm onSubmit={handleSubmit}>    
+
+      {isLoading && <Loading/>}
+        {!isLoading &&
+
+      <ContainerForm onSubmit={onClickApplicate}>    
       <SelectForm name={"tripId"} defaultValue={""} onChange={onChangeForm} required>
           <option value="" disabled>Escolha uma Viagem</option>
           {tripsList && tripsList.trips.map((trip) => {
@@ -415,9 +420,12 @@ const ApplicationFormPage = (props) => {
           <option value="Zâmbia">Zâmbia</option>
         </SelectForm>
         <ContainerButton>
-          <ButtonThreeDSmall text={<i className="fas fa-save"></i>} cor="green" onClick={() => onClickApplicate()} />
+          <ButtonThreeDSmall text={<i className="fas fa-save"></i>} cor="green" />
         </ContainerButton>
       </ContainerForm>
+      
+    }
+
     </Container>
   );
 };
