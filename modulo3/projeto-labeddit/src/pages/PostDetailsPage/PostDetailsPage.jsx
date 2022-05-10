@@ -1,8 +1,12 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
-import './styled'
+import './styled';
+import useProtectedPage from '../../hooks/useProtectedPage';
 
 const PostDetailsPage = () => {
+
+  useProtectedPage();
+  
   return (
     <div>
       <Header />

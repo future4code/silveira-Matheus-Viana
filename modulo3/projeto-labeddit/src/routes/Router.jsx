@@ -4,11 +4,9 @@ import SignUpPage from "../pages/SignUpPage/SignUpPage";
 import FeedListPage from "../pages/FeedListPage/FeedListPage";
 import PostDetailsPage from "../pages/PostDetailsPage/PostDetailsPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
-import Header from "../components/Header/Header";
 
 const Router = () => {
   return (
-    <div>
       <BrowserRouter>
         <Routes>
           <Route index element={ <LoginPage />} />
@@ -18,7 +16,6 @@ const Router = () => {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
-    </div>
   );
 };
 

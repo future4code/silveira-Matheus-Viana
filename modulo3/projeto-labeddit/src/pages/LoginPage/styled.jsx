@@ -1,17 +1,24 @@
 import styled from "styled-components";
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 
 export const ContainerFlex = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
   height: 40vh;
 `
 
-export const Imagem = styled.img`
-  width: 80px;
+export const ScreenContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+`;
+
+export const LogoImage = styled.img`
+  width: 70vw;
+  max-width: 80px;
 `;
 
 export const Title = styled.h2`
@@ -24,45 +31,27 @@ export const Subtitle = styled.p`
   margin: 0;
 `;
 
-export const Formulario = styled.form`
+export const InputsContainer = styled.div`
+  margin-bottom: 4vh;
+`;
+
+export const LoginFormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  width: 80vw;
+  max-width: 450px;
   align-items: center;
 `;
 
-export const ContainerInputs = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: 20vh;
-`;
 
-export const ContainerButtons = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  width: 100%;
-`;
-
-export const StyledTextField = styled(TextField)`
-  height: 60px;
-  width: 90%;
-  border-radius: 4px;
-`;
-
-export const StyledButton = styled(Button)`
-  width: 90%;
+export const SignUpButtonContainer = styled.div`
+  width: 80vw;
+  max-width: 450px;
 `;
 
 export const Line = styled.div`
-  width: 90%;
+  width: 80%;
   height: 1px;
   background-image: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
-  margin: 15px 0;
+  margin: 3vh;
 `;
-

@@ -22,6 +22,10 @@ export const WhiteSpace = styled.div`
   background-color: ${neutralColor};
 `
 
+export const LinkFeed = styled.a`
+  text-decoration: none;
+`;
+
 export const Logo = styled.img`
   width: 30px;
 `

@@ -1,37 +1,48 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import './styled';
 import logo from '../../assets/logo.png';
-import { ContainerFlex, Imagem, Title, Subtitle, Formulario, StyledTextField, ContainerButtons, ContainerInputs, Line, StyledButton } from './styled';
-import useForm from '../../hooks/useForm';
+import { ScreenContainer, LogoImage, SignUpButtonContainer, Title, Subtitle, ContainerFlex, Line, LoginFormContainer } from './styled';
+import LoginForm from './LoginForm';
+import Button from '@material-ui/core/Button';
+import { goToSignUp } from '../../routes/coordinator';
+import useUnprotectedPage from '../../hooks/useUnprotectedPage';
 
 
-const LoginPage = () => {
-
-  const [form, onChange, clear] = useForm({email: "", password: ""});
-
-  const onSubmitForm = () => {
-    alert('Formulário enviado com sucesso!')
-  }
+const LoginPage = (props) => {
+  const navigate = useNavigate();
+  useUnprotectedPage(); 
 
   return (
-    <div>
+    <ScreenContainer>
       <ContainerFlex>
-        <Imagem src={logo} />
+        <LogoImage src={logo} />
         <Title>LabEddit</Title>
         <Subtitle>O projeto de rede social da Labenu</Subtitle>
       </ContainerFlex>
-      <Formulario noValidate autoComplete="off" onSubmit={onSubmitForm}>
-        <ContainerInputs>
-          <StyledTextField id="outlined-basic" label="Email" name={"email"} value={form.email} onChange={onChange} variant="outlined" required/>
-          <StyledTextField id="outlined-basic" label="Senha" name={"password"} value={form.password} onChange={onChange} variant="outlined" type="password" required/>
-        </ContainerInputs>
-        <ContainerButtons>
-          <StyledButton variant="contained" color="primary" type='submit'>Continuar</StyledButton>
-          <Line />
-          <StyledButton variant="outlined" color="secondary">Crie uma conta!</StyledButton>
-        </ContainerButtons>
-      </Formulario>
-    </div>
+
+      <LoginFormContainer>
+        <LoginForm />
+      </LoginFormContainer>
+
+      <Line />
+
+      <SignUpButtonContainer>
+
+          <Button
+            onClick={() => goToSignUp(navigate)}
+            type="submit"
+            variant="outlined"
+            color="primary"
+            fullWidth
+            style={{ borderRadius: 50 }}
+          > 
+            Crie uma conta!
+          </Button>
+
+      </SignUpButtonContainer>
+
+    </ScreenContainer>
   );
 }
 
