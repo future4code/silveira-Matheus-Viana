@@ -11,9 +11,9 @@ export const goToSignUp = (navigate) => {
 }
 
 export const goToFeed = (navigate) => {
-    navigate("/feed");
+    navigate("/posts");
 }
 
-export const goToPostDetails = (navigate) => {
-    navigate("/postDetails");
+export const goToPostDetails = (navigate, id) => {
+    navigate(`/posts/${id}`);
 }

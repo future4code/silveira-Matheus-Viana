@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AppBar from '@material-ui/core/AppBar';
 import { StyledToolbar, StyledButton, WhiteSpace, Logo, LinkFeed } from './styled';
 import logo from '../../assets/logo.png'
-import { goToLogin } from '../../routes/coordinator';
+import { goToLogin, goToFeed } from '../../routes/coordinator';
 import GlobalStateContext from '../../context/GlobalStateContext';
 
 
@@ -34,7 +34,7 @@ const Header = () => {
       <AppBar position="static">
         <StyledToolbar>
           <WhiteSpace/>
-          <LinkFeed href="/feed">
+          <LinkFeed onClick={() => goToFeed(navigate)}>
             <Logo src={logo}/>
           </LinkFeed>
           <StyledButton color="inherit" onClick={rightButtonAction}>{rightButtonText}</StyledButton>

@@ -24,6 +24,7 @@ export const WhiteSpace = styled.div`
 
 export const LinkFeed = styled.a`
   text-decoration: none;
+  cursor: pointer;
 `;
 
 export const Logo = styled.img`

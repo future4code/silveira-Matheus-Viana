@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import TextField from '@material-ui/core/TextField';
 
 export const Container = styled.div`
   display: flex;
@@ -22,4 +23,8 @@ export const ContainerForm = styled.div`
 
 export const ContainerButton = styled.div`
   margin-top: 15px;
+`;
+
+export const ContainerTitle = styled.div`
+  margin-bottom: 15px;
 `;

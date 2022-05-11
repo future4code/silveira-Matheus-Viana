@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 import Header from '../../components/Header/Header';
 import './styled'
@@ -9,22 +9,23 @@ import { SignUpFormContainer, InputsContainer, TextInfoLink } from '../SignUpPag
 import useUnprotectedPage from '../../hooks/useUnprotectedPage';
 import { signup } from '../../services/users';
 import GlobalStateContext from '../../context/GlobalStateContext';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 const SignUpPage = () => {
   useUnprotectedPage();
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const { states, setters } = useContext(GlobalStateContext);
+  const { setters } = useContext(GlobalStateContext);
 
-  const { rightButtonText } = states;
   const { setRightButtonText } = setters;
 
   const { form, onChangeForm, cleanFields } = useForm({ username: "", email: "", password: "" });
 
   const onSubmitForm = (event) => {
     event.preventDefault();
-    signup(form, cleanFields, navigate, setRightButtonText);
+    signup(form, cleanFields, navigate, setRightButtonText, setIsLoading);
   }
 
   return (
@@ -90,7 +91,7 @@ const SignUpPage = () => {
                 fullWidth
                 style={{ borderRadius: 50 }}
               > 
-                Cadastrar 
+                {isLoading ? <CircularProgress color='inherit' size={24}/> : <>Cadastrar</>} 
               </Button>
             
             </InputsContainer>

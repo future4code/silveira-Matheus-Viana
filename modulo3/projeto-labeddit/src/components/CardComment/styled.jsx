@@ -34,33 +34,16 @@ export const ContainerVotes = styled.div`
   align-items: center;
 `;
 
-export const ContainerComments = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-left: 20px;
-  width: 15vw;
-  height: 4vh;
-  padding: 0 5px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-`;
-
 export const UserName = styled.p`
   font-size: 12px;
   color: black;
 `;
 
-export const Title = styled.h2`
+export const Content = styled.p`
   width: 100%;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   color: black;
   word-break: break-all;
   margin: 10px 0;
-`;
-
-export const Content = styled.p`
-  font-size: 16px;
-  color: black;
 `;

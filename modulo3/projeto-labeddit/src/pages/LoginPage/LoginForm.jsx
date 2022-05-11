@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 import './styled';
 import useForm from '../../hooks/useForm';
@@ -7,21 +7,22 @@ import Button from '@material-ui/core/Button';
 import { InputsContainer, LoginFormContainer } from './styled';
 import { login } from '../../services/users';
 import GlobalStateContext from '../../context/GlobalStateContext';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 const LoginForm = () => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const { states, setters } = useContext(GlobalStateContext);
+  const { setters } = useContext(GlobalStateContext);
 
-  const { rightButtonText } = states;
   const { setRightButtonText } = setters;
 
   const { form, onChangeForm, cleanFields } = useForm({ email: "", password: "" });
 
   const onSubmitForm = (event) => {
     event.preventDefault();
-    login(form, cleanFields, navigate, setRightButtonText);
+    login(form, cleanFields, navigate, setRightButtonText, setIsLoading);
   }  
 
   return(
@@ -61,7 +62,7 @@ const LoginForm = () => {
             fullWidth
             style={{ borderRadius: 50 }}
           > 
-            Continuar 
+            {isLoading ? <CircularProgress color='inherit' size={24}/> : <>Continuar</>} 
           </Button>
         </form>
       </LoginFormContainer>
