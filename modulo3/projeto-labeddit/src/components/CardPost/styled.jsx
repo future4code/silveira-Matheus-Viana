@@ -46,9 +46,45 @@ export const ContainerComments = styled.div`
   border: 1px solid #ddd;
 `;
 
+export const ContainreOnclick = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 5px;
+`;
+
 export const UserName = styled.p`
   font-size: 12px;
   color: black;
+`;
+
+export const ArrowUp = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+`;
+
+export const ArrowUpActive = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: green;
+`;
+
+export const ArrowDown = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+`;
+
+export const ArrowDownActive = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: red;
 `;
 
 export const Title = styled.h2`

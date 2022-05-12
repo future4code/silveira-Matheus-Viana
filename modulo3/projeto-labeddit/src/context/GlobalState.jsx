@@ -6,14 +6,9 @@ const GlobalState = (props) => {
   const [rightButtonText, setRightButtonText] = useState(
     token ? "Logout" : "Entrar"
   );
-  const [postTitle, setPostTitle] = useState();
-  const [postBody, setPostBody] = useState();
-  const [postUser, setPostUser] = useState();
-  const [postCommentCount, setPostCommentCount] = useState();
-  const [postVoteSum, setPostVoteSum] = useState();
 
-  const states = { rightButtonText, postTitle, postBody, postUser, postCommentCount, postVoteSum };
-  const setters = { setRightButtonText, setPostTitle, setPostBody, setPostUser, setPostCommentCount, setPostVoteSum };
+  const states = { rightButtonText };
+  const setters = { setRightButtonText };
   const requests = {  };
   
   return (

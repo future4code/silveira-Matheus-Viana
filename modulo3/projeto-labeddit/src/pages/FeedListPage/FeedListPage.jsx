@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Header from '../../components/Header/Header';
 import './styled'
 import useProtectedPage from '../../hooks/useProtectedPage';
@@ -9,42 +9,80 @@ import { BASE_URL } from '../../constants/ulrs';
 import CreatePostForm from './CreatePostForm';
 import { goToPostDetails } from '../../routes/coordinator';
 import { useNavigate } from 'react-router-dom';
-import GlobalStateContext from '../../context/GlobalStateContext';
 import Loading from '../../components/Loading/Loading';
+import axios from 'axios';
 
 
 const FeedListPage = () => {
   useProtectedPage();
   const navigate = useNavigate();
   
-  const { setters } = useContext(GlobalStateContext);
-  const { setPostTitle, setPostBody, setPostUser, setPostCommentCount, setPostVoteSum } = setters;
+  const [posts, getData] = useRequestData(`${BASE_URL}/posts`);
 
-  const posts = useRequestData(`${BASE_URL}/posts`)[0];
-
-  const onClickCard = (id, postTitle, postBody, postUser, postCommentCount, postVoteSum) => {
-    setPostTitle(postTitle);
-    setPostBody(postBody);
-    setPostUser(postUser);
-    setPostCommentCount(postCommentCount);
-    setPostVoteSum(postVoteSum);
+  const onClickCard = (id) => {
     goToPostDetails(navigate, id);
   }
 
+  const createPostVote = (postId, direction) => {
+    const HEADERS = {
+        headers: {
+            Authorization: localStorage.getItem("token")
+        }
+    }
+    const BODY = {
+        direction: direction
+    }
+    if(direction === 1){
+      axios
+      .post(`${BASE_URL}/posts/${postId}/votes`, BODY, HEADERS)
+      .then((res) => {
+          getData();
+          console.log(res)
+      })
+      .catch((err) => {
+          console.log(err.response)
+      })
+    }else if(direction === -1){
+      axios
+      .put(`${BASE_URL}/posts/${postId}/votes`, BODY, HEADERS)
+      .then((res) => {
+          getData();
+          console.log(res)
+      })
+      .catch((err) => {
+          console.log(err.response)
+      })
+    }else{
+      axios
+      .delete(`${BASE_URL}/posts/${postId}/votes`, HEADERS)
+      .then((res) => {
+          getData();
+          console.log(res)
+      })
+      .catch((err) => {
+          console.log(err.response)
+      })
+    }
+
+    }
+    
+  
   const postsList = posts && posts.map((post) =>{
     return (
       <CardPost 
           key={post.id}
+          id={post.id}
           title={post.title}
           body={post.body}
           user={post.username}
           commentCount={post.commentCount}
           voteSum={post.voteSum}
-          onClick={()=>onClickCard(post.id, post.title, post.body, post.username, post.commentCount, post.voteSum)}
+          onClickDetail={()=>onClickCard(post.id, post.title, post.body, post.username, post.commentCount, post.voteSum)}
+          onClickVote={createPostVote}
+          userVote={post.userVote}
         />
     )
-  })
-  
+  });
   return (
     <div>
       <Header />
