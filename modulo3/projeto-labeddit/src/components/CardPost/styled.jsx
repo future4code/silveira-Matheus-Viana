@@ -75,30 +75,28 @@ export const UserName = styled.p`
   color: black;
 `;
 
-export const ArrowUp = styled.button`
-  border: none;
-  background-color: transparent;
+export const ArrowUp = styled.img`
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 `;
 
-export const ArrowUpActive = styled.button`
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  color: green;
-`;
-
-export const ArrowDown = styled.button`
-  border: none;
-  background-color: transparent;
+export const ArrowUpActive = styled.img`
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 `;
 
-export const ArrowDownActive = styled.button`
-  border: none;
-  background-color: transparent;
+export const ArrowDown = styled.img`
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  color: red;
+`;
+
+export const ArrowDownActive = styled.img`
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 `;
 
 export const Title = styled.h2`
