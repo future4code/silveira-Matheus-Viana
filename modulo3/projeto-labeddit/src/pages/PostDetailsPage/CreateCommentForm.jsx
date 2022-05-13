@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import { ContainerButton, ContainerForm } from './styled';
+import { ContainerButton, ContainerForm, StyledButton, StyledTextField } from './styled';
 import useForm from '../../hooks/useForm';
 import { useParams } from 'react-router-dom';
 import { createComment } from '../../services/comments';
@@ -21,7 +19,7 @@ const CreateCommentForm = () => {
   return (
       <ContainerForm>
         <form onSubmit={onSubmitForm}>
-        <TextField
+        <StyledTextField
           name="body"
           value={form.body}
           onChange={onChangeForm}
@@ -35,7 +33,7 @@ const CreateCommentForm = () => {
         />
 
         <ContainerButton>
-          <Button
+          <StyledButton
             type="submit"
             variant="contained"
             color="primary"
@@ -43,7 +41,7 @@ const CreateCommentForm = () => {
             style={{ borderRadius: 10 }}
           > 
             {isLoading ? <CircularProgress color='inherit' size={24}/> : <>Responder</>} 
-          </Button>
+          </StyledButton>
         </ContainerButton>
 
         </form>

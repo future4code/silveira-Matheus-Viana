@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 import Header from '../../components/Header/Header';
 import './styled'
-import { Title, TextInfo, StyledFormControlLabel } from './styled';
+import { Title, TextInfo, StyledFormControlLabel, StyledButton } from './styled';
 import { TextField, Checkbox, Button } from '@material-ui/core';
 import useForm from '../../hooks/useForm';
 import { SignUpFormContainer, InputsContainer, TextInfoLink } from '../SignUpPage/styled';
@@ -84,7 +84,7 @@ const SignUpPage = () => {
                 }
                 label="Eu concordo em receber emails sobre coisas legais no Labeddit"
               />
-              <Button
+              <StyledButton
                 type="submit"
                 variant="contained"
                 color="primary"
@@ -92,7 +92,7 @@ const SignUpPage = () => {
                 style={{ borderRadius: 50 }}
               > 
                 {isLoading ? <CircularProgress color='inherit' size={24}/> : <>Cadastrar</>} 
-              </Button>
+              </StyledButton>
             
             </InputsContainer>
         </form>

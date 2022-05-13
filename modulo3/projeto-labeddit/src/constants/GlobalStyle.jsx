@@ -10,6 +10,9 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     min-height: 100vh;
   }
+  *{
+    font-family: 'Noto Sans', sans-serif;
+  }
 `;
 
 export default GlobalStyle;

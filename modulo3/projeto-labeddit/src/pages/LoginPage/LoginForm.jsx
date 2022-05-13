@@ -4,7 +4,7 @@ import './styled';
 import useForm from '../../hooks/useForm';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { InputsContainer, LoginFormContainer } from './styled';
+import { InputsContainer, LoginFormContainer, StyledButton } from './styled';
 import { login } from '../../services/users';
 import GlobalStateContext from '../../context/GlobalStateContext';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -55,7 +55,7 @@ const LoginForm = () => {
               />
           </InputsContainer>
 
-          <Button
+          <StyledButton
             type="submit"
             variant="contained"
             color="primary"
@@ -63,7 +63,7 @@ const LoginForm = () => {
             style={{ borderRadius: 50 }}
           > 
             {isLoading ? <CircularProgress color='inherit' size={24}/> : <>Continuar</>} 
-          </Button>
+          </StyledButton>
         </form>
       </LoginFormContainer>
 

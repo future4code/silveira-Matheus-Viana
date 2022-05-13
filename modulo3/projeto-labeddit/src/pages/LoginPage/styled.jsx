@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from '@material-ui/core/Button';
 
 export const ContainerFlex = styled.div`
   display: flex;
@@ -44,14 +45,27 @@ export const LoginFormContainer = styled.div`
 `;
 
 
-export const SignUpButtonContainer = styled.div`
+export const SignUpButtonContainer = styled.div`  
+  display: flex;
+  flex-direction: column;
   width: 80vw;
   max-width: 450px;
+  align-items: center;
 `;
 
 export const Line = styled.div`
-  width: 80%;
+  width: 90%;
   height: 1px;
   background-image: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
   margin: 3vh;
+`;
+
+export const StyledButton = styled(Button)`
+  background-image: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
+  text-transform: capitalize !important;
+`;
+
+export const StyledSignInButton = styled(Button)`
+  width: 91%;
+  text-transform: capitalize !important;
 `;

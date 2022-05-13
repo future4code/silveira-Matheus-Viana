@@ -10,16 +10,16 @@ export const StyledToolbar = styled(Toolbar)`
 `;
 
 export const StyledButton = styled(Button)`
-  color: ${primaryText};
+  color: ${primaryText} !important;
   font-size: 18px;
   width: 90px;
-  text-transform: capitalize;
+  text-transform: capitalize !important;
 `;
 
 export const WhiteSpace = styled.div`
   width: 90px;
   height: 20px;
-  background-color: ${neutralColor};
+  background-color: ${neutralColor} !important;
 `
 
 export const LinkFeed = styled.a`

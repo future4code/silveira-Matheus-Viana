@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import { ContainerButton, ContainerForm, ContainerTitle } from './styled';
+import { ContainerButton, ContainerForm, ContainerTitle, StyledButton, StyledTextField } from './styled';
 import useForm from '../../hooks/useForm';
 import { createPost } from '../../services/posts';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -19,7 +17,7 @@ const CreatePostForm = () => {
       <ContainerForm>
         <form onSubmit={onSubmitForm}>
           <ContainerTitle>
-            <TextField
+            <StyledTextField
               name="title"
               value={form.title}
               onChange={onChangeForm}
@@ -32,7 +30,7 @@ const CreatePostForm = () => {
             />
           </ContainerTitle>
 
-          <TextField
+          <StyledTextField
             name="body"
             value={form.body}
             onChange={onChangeForm}
@@ -46,7 +44,7 @@ const CreatePostForm = () => {
           />
 
           <ContainerButton>
-            <Button
+            <StyledButton
               type="submit"
               variant="contained"
               color="primary"
@@ -54,7 +52,7 @@ const CreatePostForm = () => {
               style={{ borderRadius: 10 }}
             > 
               {isLoading ? <CircularProgress color='inherit' size={24}/> : <>Postar</>} 
-            </Button>
+            </StyledButton>
           </ContainerButton>
         </form>
       </ContainerForm>

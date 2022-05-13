@@ -1,5 +1,8 @@
 import styled from 'styled-components';
+import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import { neutralColor } from '../../constants/colors';
+
 
 export const Container = styled.div`
   display: flex;
@@ -27,4 +30,13 @@ export const ContainerButton = styled.div`
 
 export const ContainerTitle = styled.div`
   margin-bottom: 15px;
+`;
+
+export const StyledTextField = styled(TextField)`
+  background-color: ${neutralColor} !important;
+`;
+
+export const StyledButton = styled(Button)`
+  background-image: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
+  text-transform: capitalize !important;
 `;

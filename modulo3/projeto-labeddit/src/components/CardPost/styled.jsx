@@ -7,8 +7,8 @@ export const StyledCard = styled(Card)`
   padding: 4%;
   color: black;
   margin-bottom: 4%;
-  border-radius: 8px;
-  border: 1px solid #ddd;
+  border-radius: 12px !important;
+  border: 1px solid #ddd !important;
   background-color: #f8f8f8;
   display: flex;
   flex-direction: column;
@@ -27,11 +27,18 @@ export const ContainerVotes = styled.div`
   width: 25vw;
   height: 4vh;
   padding: 0 5px;
-  border-radius: 5px;
+  border-radius: 12px;
   border: 1px solid #ddd;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 15vw;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    width: 10vw;
+  }
 `;
 
 export const ContainerComments = styled.div`
@@ -42,8 +49,14 @@ export const ContainerComments = styled.div`
   width: 15vw;
   height: 4vh;
   padding: 0 5px;
-  border-radius: 5px;
+  border-radius: 12px;
   border: 1px solid #ddd;
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 10vw;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 6vw;
+  }
 `;
 
 export const ContainreOnclick = styled.div`
@@ -58,6 +71,7 @@ export const ContainreOnclick = styled.div`
 
 export const UserName = styled.p`
   font-size: 12px;
+  font-style: italic;
   color: black;
 `;
 

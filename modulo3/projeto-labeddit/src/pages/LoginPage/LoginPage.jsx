@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import './styled';
 import logo from '../../assets/logo.png';
-import { ScreenContainer, LogoImage, SignUpButtonContainer, Title, Subtitle, ContainerFlex, Line, LoginFormContainer } from './styled';
+import { ScreenContainer, LogoImage, SignUpButtonContainer, Title, Subtitle, ContainerFlex, Line, LoginFormContainer, StyledSignInButton } from './styled';
 import LoginForm from './LoginForm';
 import Button from '@material-ui/core/Button';
 import { goToSignUp } from '../../routes/coordinator';
@@ -23,22 +23,21 @@ const LoginPage = (props) => {
 
       <LoginFormContainer>
         <LoginForm />
+      <Line />
       </LoginFormContainer>
 
-      <Line />
 
       <SignUpButtonContainer>
 
-          <Button
+          <StyledSignInButton
             onClick={() => goToSignUp(navigate)}
             type="submit"
             variant="outlined"
             color="primary"
-            fullWidth
-            style={{ borderRadius: 50 }}
+            style={{ borderRadius: 50, borderWidth: 2 }}
           > 
             Crie uma conta!
-          </Button>
+          </StyledSignInButton>
 
       </SignUpButtonContainer>
 

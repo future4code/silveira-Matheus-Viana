@@ -37,30 +37,24 @@ const FeedListPage = () => {
       .post(`${BASE_URL}/posts/${postId}/votes`, BODY, HEADERS)
       .then((res) => {
           getData();
-          console.log(res)
       })
       .catch((err) => {
-          console.log(err.response)
       })
     }else if(direction === -1){
       axios
       .put(`${BASE_URL}/posts/${postId}/votes`, BODY, HEADERS)
       .then((res) => {
           getData();
-          console.log(res)
       })
       .catch((err) => {
-          console.log(err.response)
       })
     }else{
       axios
       .delete(`${BASE_URL}/posts/${postId}/votes`, HEADERS)
       .then((res) => {
           getData();
-          console.log(res)
       })
       .catch((err) => {
-          console.log(err.response)
       })
     }
 
