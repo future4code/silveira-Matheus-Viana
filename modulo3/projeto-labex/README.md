@@ -29,6 +29,3 @@ Sistema de Viagens Interplanetárias.
 - Javascript
 - React;
 - Consumo de API REST;
-
-# Acesse o site em:
-https://matheus-mantini-labex.surge.sh/
